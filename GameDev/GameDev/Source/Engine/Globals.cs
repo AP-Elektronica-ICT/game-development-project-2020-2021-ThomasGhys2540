@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace GameDev.Source.Engine
 {
-    class Globals
+    public class Globals
     {
         //Loads in images
         public static ContentManager contentManager;

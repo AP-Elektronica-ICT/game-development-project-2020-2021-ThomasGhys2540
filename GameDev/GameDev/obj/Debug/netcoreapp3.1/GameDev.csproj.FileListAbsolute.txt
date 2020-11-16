@@ -34,3 +34,4 @@ C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\
 C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.dll
 C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.pdb
 C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.genruntimeconfig.cache
+C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\IdleHero.xnb

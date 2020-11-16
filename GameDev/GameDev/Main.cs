@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using GameDev.Source.Engine;
+using GameDev.Source;
 #endregion
 
 namespace GameDev
@@ -19,7 +20,8 @@ namespace GameDev
     public class Main : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+
+        private World world;
 
         public Main()
         {
@@ -40,7 +42,7 @@ namespace GameDev
             Globals.contentManager = this.Content;
             Globals.spriteBatch  = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            world = new World();
         }
 
         protected override void Update(GameTime gameTime)
@@ -48,7 +50,7 @@ namespace GameDev
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            world.Update();
 
             base.Update(gameTime);
         }
@@ -59,9 +61,9 @@ namespace GameDev
 
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
                 
-            Globals.spriteBatch.End();
+                world.Draw();
 
-            // TODO: Add your drawing code here
+            Globals.spriteBatch.End();
 
             base.Draw(gameTime);
         }
