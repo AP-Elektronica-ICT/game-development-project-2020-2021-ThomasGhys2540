@@ -5,8 +5,10 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/thomm/Dropbox/My PC (LAPTOP-GOP2TTCO)/Documents/School/Electronica-ICT/2e jaar/Game Development/game-development-project-2020-2021-ThomasGhys2540/Sprites/Free/Main Characters/Ninja Frog/Idle (32x32).png</File>
+    <File>C:/Users/thomm/Dropbox/My PC (LAPTOP-GOP2TTCO)/Documents/School/Electronica-ICT/2e jaar/Game Development/game-development-project-2020-2021-ThomasGhys2540/Sprites/Free/Main Characters/Ninja Frog/Run (32x32).png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

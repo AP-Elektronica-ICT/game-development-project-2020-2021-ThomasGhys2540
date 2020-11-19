@@ -12,17 +12,19 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using GameDev.Source.Engine;
+using GameDev.GamePlay.World;
 #endregion
 
 namespace GameDev.Source
 {
     public class World
     {
-        public Basic2DFormat Idlehero;
+        public MainHero Idlehero;
+        public MainHero RunningHero;
 
         public World()
         {
-            Idlehero = new Basic2DFormat("Sprites\\IdleHero", new Vector2(300, 300), new Vector2(48, 48));
+            Idlehero = new MainHero("Sprites\\IdleHero", new Vector2(300, 300), new Vector2(48, 48), new Rectangle(0, 0, 32, 32), 32, 352);
         }
 
         public virtual void Update()

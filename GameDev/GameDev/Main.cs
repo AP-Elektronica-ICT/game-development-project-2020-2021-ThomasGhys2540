@@ -42,6 +42,8 @@ namespace GameDev
             Globals.contentManager = this.Content;
             Globals.spriteBatch  = new SpriteBatch(GraphicsDevice);
 
+            Globals.keyboard = new Source.Engine.Input.InputKeyboard();
+
             world = new World();
         }
 
@@ -50,7 +52,11 @@ namespace GameDev
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            Globals.keyboard.Update();
+
             world.Update();
+
+            Globals.keyboard.UpdateOld();
 
             base.Update(gameTime);
         }
@@ -61,6 +67,7 @@ namespace GameDev
 
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
                 
+
                 world.Draw();
 
             Globals.spriteBatch.End();

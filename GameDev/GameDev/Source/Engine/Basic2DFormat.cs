@@ -22,23 +22,27 @@ namespace GameDev.Source.Engine
         public Vector2 dimensions;
         public Texture2D model;
 
-        private Rectangle IdleHeroSpritesheet;
+        private Rectangle Spritesheet;
+        private int UpdateSize;
+        private int SpriteSize;
         
-        public Basic2DFormat(string Path, Vector2 Pos, Vector2 Dim)
+        public Basic2DFormat(string Path, Vector2 Pos, Vector2 Dim, Rectangle spritesheet, int spritesize, int SpriteAmount)
         {
             position = Pos;
             dimensions = Dim;
             model = Globals.contentManager.Load<Texture2D>(Path);
 
-            IdleHeroSpritesheet = new Rectangle(0, 0, 32, 32);
+            Spritesheet = spritesheet;
+            UpdateSize = spritesize;
+            SpriteSize = SpriteAmount;
         }
 
         public virtual void Update()
         {
-            IdleHeroSpritesheet.X += 32;
-            if (IdleHeroSpritesheet.X >= 352)
+            Spritesheet.X += UpdateSize;
+            if (Spritesheet.X >= SpriteSize)
             {
-                IdleHeroSpritesheet.X = 0;
+                Spritesheet.X = 0;
             }
         }
 
@@ -56,7 +60,7 @@ namespace GameDev.Source.Engine
                         (int)dimensions.X,
                         (int)dimensions.Y
                     ),
-                    IdleHeroSpritesheet,
+                    Spritesheet,
                     Color.White,
                     0.0f,
                     new Vector2

@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using GameDev.Source.Engine.Input;
 #endregion
 
 namespace GameDev.Source.Engine
@@ -22,5 +23,8 @@ namespace GameDev.Source.Engine
         
         //Helps draw the images
         public static SpriteBatch spriteBatch;
+
+        //Keyboard
+        public static InputKeyboard keyboard;
     }
 }
