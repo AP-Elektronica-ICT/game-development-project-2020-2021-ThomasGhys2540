@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using GameDev.Source.Engine;
 using GameDev.Source;
+using GameDev.GamePlay;
 #endregion
 
 namespace GameDev
@@ -22,6 +23,7 @@ namespace GameDev
         private GraphicsDeviceManager _graphics;
 
         private World world;
+        private Background background;
 
         public Main()
         {
@@ -32,7 +34,13 @@ namespace GameDev
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            Globals.ScreenWidth = 1600;
+            Globals.ScreenHeight = 900;
+
+            _graphics.PreferredBackBufferWidth = Globals.ScreenWidth;
+            _graphics.PreferredBackBufferHeight = Globals.ScreenHeight;
+
+            _graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -42,9 +50,8 @@ namespace GameDev
             Globals.contentManager = this.Content;
             Globals.spriteBatch  = new SpriteBatch(GraphicsDevice);
 
-            Globals.keyboard = new Source.Engine.Input.InputKeyboard();
-
             world = new World();
+            background = new Background("Sprites\\FarBackground", new Vector2(Globals.ScreenWidth/2, Globals.ScreenHeight/2), new Vector2(Globals.ScreenWidth, Globals.ScreenHeight));
         }
 
         protected override void Update(GameTime gameTime)
@@ -52,11 +59,7 @@ namespace GameDev
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            Globals.keyboard.Update();
-
             world.Update();
-
-            Globals.keyboard.UpdateOld();
 
             base.Update(gameTime);
         }
@@ -66,8 +69,13 @@ namespace GameDev
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
-                
 
+                background.Draw();
+
+            Globals.spriteBatch.End();
+
+            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+                
                 world.Draw();
 
             Globals.spriteBatch.End();

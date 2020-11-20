@@ -12,29 +12,37 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using GameDev.Source.Engine;
-using GameDev.GamePlay.World;
+using GameDev.GamePlay.WorldData;
 #endregion
 
 namespace GameDev.Source
 {
     public class World
     {
-        public MainHero Idlehero;
-        public MainHero RunningHero;
+        public MainHero Hero;
+        public UserInterface UI;
 
         public World()
         {
-            Idlehero = new MainHero("Sprites\\IdleHero", new Vector2(300, 300), new Vector2(48, 48), new Rectangle(0, 0, 32, 32), 32, 352);
+            Hero = new MainHero(new Vector2(300, 500), new Vector2(48, 48), new Rectangle(0, 0, 32, 32));
+
+            UI = new UserInterface();
+
+            Globals.Coinage = 0;
         }
 
         public virtual void Update()
         {
-            Idlehero.Update();
+            Hero.Update();
+
+            UI.Update();
         }
 
         public virtual void Draw()
         {
-            Idlehero.Draw();
+            Hero.Draw();
+
+            UI.Draw();
         }
     }
 }

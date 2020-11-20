@@ -16,25 +16,27 @@ using GameDev.Source.Engine;
 
 namespace GameDev.Source.Engine
 {
-    public class Basic2DFormat
+    public class Animated2D
     {
         public Vector2 position;
         public Vector2 dimensions;
-        public Texture2D model;
+        public Vector2 velocity;
+        public readonly Vector2 gravity = new Vector2(0, -9.81f);
 
-        private Rectangle Spritesheet;
-        private int UpdateSize;
-        private int SpriteSize;
+        public Texture2D model;
+        public int Speed = 1;
+        public SpriteEffects Rotation = SpriteEffects.None;
+        public int UpdateSize;
+        public int SpriteSize;
+        public Rectangle Spritesheet;
         
-        public Basic2DFormat(string Path, Vector2 Pos, Vector2 Dim, Rectangle spritesheet, int spritesize, int SpriteAmount)
+        
+        public Animated2D(Vector2 Pos, Vector2 Dim, Rectangle spritesheet)
         {
             position = Pos;
             dimensions = Dim;
-            model = Globals.contentManager.Load<Texture2D>(Path);
 
             Spritesheet = spritesheet;
-            UpdateSize = spritesize;
-            SpriteSize = SpriteAmount;
         }
 
         public virtual void Update()
@@ -68,7 +70,7 @@ namespace GameDev.Source.Engine
                         model.Bounds.Width / 2,
                         model.Bounds.Height / 2
                     ),
-                    new SpriteEffects(),
+                    Rotation,
                     0
                 );
             }

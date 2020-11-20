@@ -11,6 +11,9 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Content\Fonts\Arial16.xnb" />
+    <None Remove="Content\Fonts\BlackText.xnb" />
+    <None Remove="Content\Sprites\FarBackground.xnb" />
     <None Remove="Content\Sprites\IdleHero.xnb" />
     <None Remove="Content\Sprites\RunHero.xnb" />
   </ItemGroup>
@@ -23,6 +26,15 @@
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
+    <Content Include="Content\Fonts\Arial16.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\BlackText.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\FarBackground.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sprites\IdleHero.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -32,6 +44,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Audio\" />
-    <Folder Include="Content\Fonts\" />
   </ItemGroup>
 </Project>
