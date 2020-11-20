@@ -24,7 +24,7 @@ namespace GameDev.Source.Engine
         public readonly Vector2 gravity = new Vector2(0, -9.81f);
 
         public Texture2D model;
-        public int Speed = 1;
+        public int Speed = 10;
         public SpriteEffects Rotation = SpriteEffects.None;
         public int UpdateSize;
         public int SpriteSize;

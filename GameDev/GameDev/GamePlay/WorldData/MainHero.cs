@@ -19,7 +19,9 @@ namespace GameDev.GamePlay.WorldData
     public class MainHero: Animated2D
     {
         public Boolean HasJumped;
-
+        public float Jumpspeed = 0;
+        public Vector2 StartPos;
+        public Boolean JumpFlag = true;
         public Texture2D Idle;
         public Texture2D Running;
 
@@ -57,11 +59,11 @@ namespace GameDev.GamePlay.WorldData
 
             if (Keyboard.GetState().IsKeyDown(Keys.LeftControl))
             {
-                Speed = 5;
+                Speed = 20;
             }
             else
             {
-                Speed = 1;
+                Speed = 10;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.P))
@@ -72,6 +74,7 @@ namespace GameDev.GamePlay.WorldData
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 HasJumped = true;
+                Jumpspeed = -14;
             }
 
             if (HasJumped)
@@ -105,7 +108,21 @@ namespace GameDev.GamePlay.WorldData
 
         public void Jump()
         {
-            
+            if (JumpFlag)
+            {
+                StartPos.Y = position.Y;
+            }
+
+            JumpFlag = false;
+
+            position.Y += Jumpspeed;
+            Jumpspeed += 1;
+            if (position.Y >= StartPos.Y)
+            {
+                position.Y = StartPos.Y;
+                HasJumped = false;
+                JumpFlag = true;
+            }
         }
     }
 }
