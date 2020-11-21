@@ -66,7 +66,7 @@ namespace GameDev.GamePlay.WorldData
                 Speed = 10;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.P))
+            if (Keyboard.GetState().IsKeyDown(Keys.O))
             {
                 Globals.Coinage++;
             }

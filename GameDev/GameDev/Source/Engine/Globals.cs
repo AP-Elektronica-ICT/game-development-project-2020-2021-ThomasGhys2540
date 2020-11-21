@@ -32,5 +32,8 @@ namespace GameDev.Source.Engine
 
         //Coinage system
         public static int Coinage;
+
+        //Pauze
+        public static Boolean IsPaused = false;
     }
 }

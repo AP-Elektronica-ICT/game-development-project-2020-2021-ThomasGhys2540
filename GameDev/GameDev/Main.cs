@@ -14,6 +14,8 @@ using Microsoft.Xna.Framework.Media;
 using GameDev.Source.Engine;
 using GameDev.Source;
 using GameDev.GamePlay;
+using GameDev.GamePlay.WorldData;
+using GameDev.GameStates;
 #endregion
 
 namespace GameDev
@@ -22,9 +24,11 @@ namespace GameDev
     {
         private GraphicsDeviceManager _graphics;
 
-        private World world;
+
         private Background background;
         private Camera camera;
+        private State CurrentState;
+        private State NextState;
 
         public Main()
         {
@@ -32,7 +36,7 @@ namespace GameDev
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
-
+        
         protected override void Initialize()
         {
             Globals.ScreenWidth = 1600;
@@ -53,18 +57,21 @@ namespace GameDev
             Globals.contentManager = this.Content;
             Globals.spriteBatch  = new SpriteBatch(GraphicsDevice);
 
-            world = new World();
+            CurrentState = new MainMenuState(this, _graphics.GraphicsDevice);
+
             background = new Background("Sprites\\FarBackground", new Vector2(Globals.ScreenWidth/2, Globals.ScreenHeight/2), new Vector2(Globals.ScreenWidth, Globals.ScreenHeight));
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            if (NextState != null)
+            {
+                CurrentState = NextState;
 
-            world.Update();
+                NextState = null;
+            }
 
-            camera.Update(gameTime, world);
+            CurrentState.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -77,15 +84,16 @@ namespace GameDev
 
                 background.Draw();
 
-            Globals.spriteBatch.End();
-
-            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
-                
-                world.Draw();
+                CurrentState.Draw(gameTime);
 
             Globals.spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        public void ChangeState(State ChangeTo)
+        {
+            NextState = ChangeTo;
         }
     }
 }

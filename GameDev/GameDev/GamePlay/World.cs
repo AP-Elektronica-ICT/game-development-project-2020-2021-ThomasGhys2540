@@ -20,29 +20,36 @@ namespace GameDev.Source
     public class World
     {
         public MainHero Hero;
-        public UserInterface UI;
 
         public World()
         {
             Hero = new MainHero(new Vector2(300, 500), new Vector2(48, 48), new Rectangle(0, 0, 32, 32));
 
-            UI = new UserInterface();
-
             Globals.Coinage = 0;
+            Globals.IsPaused = false;
         }
 
         public virtual void Update()
         {
-            Hero.Update();
+            if (!Globals.IsPaused)
+            {
+                Hero.Update();
+            }
+            else
+            {
 
-            UI.Update();
+            }
+
+            Keyboard.GetState();
+            if (Keyboard.HasBeenPressed(Keys.P))
+            {
+                Globals.IsPaused = !Globals.IsPaused;
+            }
         }
 
         public virtual void Draw()
         {
             Hero.Draw();
-
-            UI.Draw();
         }
     }
 }
