@@ -71,7 +71,7 @@ namespace GameDev.GamePlay.WorldData
                 Globals.Coinage++;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            if (Keyboard.GetState().IsKeyDown(Keys.Space) && HasJumped == false)
             {
                 HasJumped = true;
                 Jumpspeed = -14;
@@ -117,6 +117,7 @@ namespace GameDev.GamePlay.WorldData
 
             position.Y += Jumpspeed;
             Jumpspeed += 1;
+
             if (position.Y >= StartPos.Y)
             {
                 position.Y = StartPos.Y;
