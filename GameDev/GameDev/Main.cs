@@ -24,6 +24,7 @@ namespace GameDev
 
         private World world;
         private Background background;
+        private Camera camera;
 
         public Main()
         {
@@ -41,6 +42,8 @@ namespace GameDev
             _graphics.PreferredBackBufferHeight = Globals.ScreenHeight;
 
             _graphics.ApplyChanges();
+
+            camera = new Camera(GraphicsDevice.Viewport);
 
             base.Initialize();
         }
@@ -61,6 +64,8 @@ namespace GameDev
 
             world.Update();
 
+            camera.Update(gameTime, world);
+
             base.Update(gameTime);
         }
 
@@ -74,7 +79,7 @@ namespace GameDev
 
             Globals.spriteBatch.End();
 
-            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
                 
                 world.Draw();
 

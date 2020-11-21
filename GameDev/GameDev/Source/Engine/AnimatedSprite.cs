@@ -16,7 +16,7 @@ using GameDev.Source.Engine;
 
 namespace GameDev.Source.Engine
 {
-    public class Animated2D
+    public class AnimatedSprite
     {
         public Vector2 position;
         public Vector2 dimensions;
@@ -31,7 +31,7 @@ namespace GameDev.Source.Engine
         public Rectangle Spritesheet;
         
         
-        public Animated2D(Vector2 Pos, Vector2 Dim, Rectangle spritesheet)
+        public AnimatedSprite(Vector2 Pos, Vector2 Dim, Rectangle spritesheet)
         {
             position = Pos;
             dimensions = Dim;

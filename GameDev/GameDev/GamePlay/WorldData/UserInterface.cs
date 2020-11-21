@@ -36,7 +36,7 @@ namespace GameDev.GamePlay.WorldData
         {
             string ShowOnScreen = "Coinage = " + Globals.Coinage;
             Vector2 StringDimensions = Font.MeasureString(ShowOnScreen);
-            Globals.spriteBatch.DrawString(Font, ShowOnScreen, new Vector2(5, 5), Color.Black); ;
+            Globals.spriteBatch.DrawString(Font, ShowOnScreen, new Vector2(5, 5), Color.Black);
         }
     }
 }

@@ -16,7 +16,7 @@ using GameDev.Source.Engine;
 
 namespace GameDev.GamePlay.WorldData
 {
-    public class MainHero: Animated2D
+    public class MainHero: AnimatedSprite
     {
         public Boolean HasJumped;
         public float Jumpspeed = 0;
