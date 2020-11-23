@@ -35,5 +35,8 @@ namespace GameDev.Source.Engine
 
         //Pauze
         public static Boolean IsPaused = false;
+
+        //World
+        public static World _World;
     }
 }

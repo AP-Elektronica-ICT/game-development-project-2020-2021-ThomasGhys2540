@@ -22,21 +22,19 @@ namespace GameDev.GameStates
 {
     public class Level001State: State
     {
-        private World world;
-
         public Level001State(Main main, GraphicsDevice graphicsDevice) : base(main, graphicsDevice)
         {
-            world = new World();
+            
         }
 
         public override void Update(GameTime gameTime)
         {
-            world.Update();
+            Globals._World.Update();
         }
 
         public override void Draw(GameTime gameTime)
         {
-            world.Draw();
+            Globals._World.Draw();
         }
     }
 }

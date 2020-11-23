@@ -23,12 +23,11 @@ namespace GameDev
     public class Main : Game
     {
         private GraphicsDeviceManager _graphics;
-
-
         private Background background;
         private Camera camera;
         private State CurrentState;
         private State NextState;
+        
 
         public Main()
         {
@@ -46,7 +45,7 @@ namespace GameDev
             _graphics.PreferredBackBufferHeight = Globals.ScreenHeight;
 
             _graphics.ApplyChanges();
-
+            
             camera = new Camera(GraphicsDevice.Viewport);
 
             base.Initialize();
@@ -56,6 +55,8 @@ namespace GameDev
         {
             Globals.contentManager = this.Content;
             Globals.spriteBatch  = new SpriteBatch(GraphicsDevice);
+
+            Globals._World = new World();
 
             CurrentState = new MainMenuState(this, _graphics.GraphicsDevice);
 
@@ -80,11 +81,27 @@ namespace GameDev
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            /*Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
                 background.Draw();
 
+                if (CurrentState.GetType() == typeof(MainMenuState) || CurrentState.GetType() == typeof(LevelSelectState) || CurrentState.GetType() == typeof(PauseMenuState))
+                {
+                    CurrentState.Draw(gameTime);
+                }
+
+            Globals.spriteBatch.End();*/
+            //Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
+
+
+            background.Draw();
+
+            if (CurrentState.GetType() == typeof(MainMenuState) || CurrentState.GetType() == typeof(LevelSelectState) || CurrentState.GetType() == typeof(PauseMenuState))
+            {
                 CurrentState.Draw(gameTime);
+            }
+
 
             Globals.spriteBatch.End();
 

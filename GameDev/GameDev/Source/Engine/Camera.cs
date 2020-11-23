@@ -29,7 +29,7 @@ namespace GameDev.Source.Engine
 
         public void Update(GameTime gameTime, World world)
         {
-            center = new Vector2(world.Hero.position.X + (world.Hero.dimensions.X/2) - 400, 0);
+            center = new Vector2(/*world.Hero.position.X + (world.Hero.dimensions.X/2) - 400*/ 0, 0);
             transform = Matrix.CreateScale(new Vector3(1, 1, 0)) * Matrix.CreateTranslation(new Vector3(-center.X, -center.Y, 0));
         }
     }
