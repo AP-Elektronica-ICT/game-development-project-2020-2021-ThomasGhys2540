@@ -55,7 +55,7 @@ namespace GameDev
             Globals.contentManager = this.Content;
             Globals.spriteBatch  = new SpriteBatch(GraphicsDevice);
 
-            Globals._World = new World(new List<Sprites>());
+            Globals._World = new World(new List<Platform>());
 
             CurrentState = new MainMenuState(this, _graphics.GraphicsDevice);
 

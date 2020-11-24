@@ -31,9 +31,9 @@ namespace GameDev.Source.Engine
             ColBox = newCol;
         }
 
-        public bool Collides(Rectangle CollidesWith)
+        public bool Collides(CollisionBox CollidesWith)
         {
-            return ColBox.Intersects(CollidesWith);
+            return ColBox.Intersects(CollidesWith.ColBox);
         }
     }
 }

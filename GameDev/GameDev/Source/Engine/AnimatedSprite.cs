@@ -22,6 +22,7 @@ namespace GameDev.Source.Engine
         public Vector2 dimensions;
         public CollisionBox colBox;
         public Texture2D model;
+        public Vector2 velocity;
         public int Speed = 10;
         public SpriteEffects Rotation = SpriteEffects.None;
         public int UpdateSize;
@@ -33,19 +34,18 @@ namespace GameDev.Source.Engine
         {
             position = Pos;
             dimensions = Dim;
+            velocity = Vector2.Zero;
 
             Spritesheet = spritesheet;
 
             colBox = new CollisionBox(new Rectangle((int)position.X, (int)position.Y, (int)dimensions.X, (int)dimensions.Y));
         }
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
-            Spritesheet.X += UpdateSize;
-            if (Spritesheet.X >= SpriteSize)
-            {
-                Spritesheet.X = 0;
-            }
+            float time = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            velocity += Globals.Gravity * time;
+            position += velocity * time;
 
             colBox.TransformCollision(new Rectangle((int)position.X, (int)position.Y, (int)dimensions.X, (int)dimensions.Y));
         }

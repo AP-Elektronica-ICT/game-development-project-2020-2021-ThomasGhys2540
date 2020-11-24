@@ -20,15 +20,15 @@ namespace GameDev.Source
     public class World
     {
         public MainHero Hero;
-        public List<Sprites> WorldObjects;
+        public List<Platform> WorldObjects;
 
-        public World(List<Sprites> objecten)
+        public World(List<Platform> objecten)
         {
             Hero = new MainHero(new Vector2(300, 500), new Vector2(48, 48), new Rectangle(0, 0, 32, 32));
 
-            WorldObjects = new List<Sprites>();
+            WorldObjects = new List<Platform>();
 
-            foreach (Sprites item in objecten)
+            foreach (Platform item in objecten)
             {
                 WorldObjects.Add(item);
             }
@@ -37,16 +37,16 @@ namespace GameDev.Source
             Globals.IsPaused = false;
         }
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
-            foreach (Sprites item in WorldObjects)
+            foreach (Platform item in WorldObjects)
             {
                 item.Update();
             }
 
             if (!Globals.IsPaused)
             {
-                Hero.Update();
+                Hero.Update(gameTime);
             }
 
             Keyboard.GetState();
@@ -60,10 +60,80 @@ namespace GameDev.Source
         {
             Hero.Draw();
 
-            foreach (Sprites item in WorldObjects)
+            foreach (Platform item in WorldObjects)
             {
                 item.Draw();
             }
+        }
+
+        public Boolean CheckCollision(CollisionBox colBox)
+        {
+            foreach (Platform item in WorldObjects)
+            {
+                if (item.PlatformCollision.Collides(colBox))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public CollisionBox GetCollisonBox(CollisionBox colBox)
+        {
+            foreach (Platform item in WorldObjects)
+            {
+                if (item.PlatformCollision.Collides(colBox))
+                {
+                    return item.PlatformCollision;
+                }
+            }
+
+            return null;
+        }
+
+        public Vector2 CheckCollisionSide(CollisionBox heroColBox)
+        {
+            Vector2 colSide = new Vector2();
+            Rectangle Hero = heroColBox.ColBox;
+            Rectangle compareTo;
+
+            if (GetCollisonBox(heroColBox) != null)
+            {
+                compareTo = GetCollisonBox(heroColBox).ColBox;
+            }
+            else
+            {
+                return Vector2.Zero;
+            }
+            
+            if (Hero.Right > compareTo.Left && Hero.Left < compareTo.Left)
+            {
+                colSide.X = compareTo.Left - Hero.Right;
+            }
+            else if (Hero.Left < compareTo.Right && Hero.Right > compareTo.Right)
+            {
+                colSide.X = compareTo.Right - Hero.Left;
+            }
+            else
+            {
+                colSide.X = 0;
+            }
+            
+            if (Hero.Bottom > compareTo.Top && Hero.Top < compareTo.Top)
+            {
+                colSide.Y = compareTo.Top - Hero.Bottom;
+            }
+            else if (Hero.Top < compareTo.Bottom && Hero.Bottom > compareTo.Bottom)
+            {
+                colSide.Y = compareTo.Bottom - Hero.Top;
+            }
+            else
+            {
+                colSide.Y = 0;
+            }
+
+            return colSide;
         }
     }
 }

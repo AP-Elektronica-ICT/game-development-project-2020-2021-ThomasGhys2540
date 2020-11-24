@@ -19,7 +19,7 @@ namespace GameDev.GamePlay.WorldData
     public class MainHero: AnimatedSprite
     {
         public Boolean HasJumped;
-        public float Jumpspeed = 0;
+        public float Jumpforce = 10;
         public Vector2 StartPos;
         public Boolean JumpFlag = true;
         public Texture2D Idle;
@@ -35,21 +35,41 @@ namespace GameDev.GamePlay.WorldData
             model = Idle;
         }
 
-        public override void Update()
+        public override void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Q))
+            var testcolbox = Globals._World.CheckCollisionSide(colBox);
+
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Q) && testcolbox.X > 0)
             {
                 RunningAnimation();
 
                 Rotation = SpriteEffects.FlipHorizontally;
-                position = new Vector2(position.X - Speed, position.Y);
+
+                if (Globals._World.CheckCollision(colBox))
+                {
+                    velocity.X = testcolbox.X;
+                }
+                else
+                {
+                    velocity = new Vector2(position.X - Speed, position.Y);
+                }
+
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 RunningAnimation();
                 
                 Rotation = SpriteEffects.None;
-                position = new Vector2(position.X + Speed, position.Y);
+
+                if (Globals._World.CheckCollision(colBox) && testcolbox.X < 0)
+                {
+                    velocity.X = testcolbox.X;
+                }
+                else
+                {
+                    velocity = new Vector2(position.X + Speed, position.Y);
+                }
             }
 
             if (Keyboard.GetState().IsKeyUp(Keys.D) && Keyboard.GetState().IsKeyUp(Keys.Q))
@@ -74,7 +94,7 @@ namespace GameDev.GamePlay.WorldData
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && HasJumped == false)
             {
                 HasJumped = true;
-                Jumpspeed = -14;
+                velocity = new Vector2(position.X, position.Y - Jumpforce);
             }
 
             if (HasJumped)
@@ -82,7 +102,12 @@ namespace GameDev.GamePlay.WorldData
                 Jump();
             }
 
-            base.Update();
+            if (Globals._World.CheckCollision(colBox) && testcolbox.Y < 0)
+            {
+                velocity.Y = testcolbox.Y;
+            }
+
+            base.Update(gameTime);
         }
 
         public override void Draw()
@@ -113,10 +138,7 @@ namespace GameDev.GamePlay.WorldData
                 StartPos.Y = position.Y;
             }
 
-            JumpFlag = false;
-
-            position.Y += Jumpspeed;
-            Jumpspeed += 1;
+            JumpFlag = false;     
 
             if (position.Y >= StartPos.Y)
             {

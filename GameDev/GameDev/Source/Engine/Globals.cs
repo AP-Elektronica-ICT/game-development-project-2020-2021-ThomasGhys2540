@@ -38,5 +38,8 @@ namespace GameDev.Source.Engine
 
         //World
         public static World _World;
+
+        //Gravity
+        public static Vector2 Gravity = new Vector2(0, 98.1f);
     }
 }
