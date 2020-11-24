@@ -26,7 +26,7 @@ namespace GameDev.GamePlay.UserInterface
         {
             get
             {
-                return new Rectangle((int)position.X, (int)position.Y, 400, 75);
+                return new Rectangle((int)position.X, (int)position.Y, 200, 200);
             }
         }
         public string Text { get; set; }

@@ -20,7 +20,7 @@ namespace GameDev.Source.Engine
     {
         public Vector2 position;
         public Vector2 dimensions;
-
+        public CollisionBox colBox;
         public Texture2D model;
         public int Speed = 10;
         public SpriteEffects Rotation = SpriteEffects.None;
@@ -35,6 +35,8 @@ namespace GameDev.Source.Engine
             dimensions = Dim;
 
             Spritesheet = spritesheet;
+
+            colBox = new CollisionBox(new Rectangle((int)position.X, (int)position.Y, (int)dimensions.X, (int)dimensions.Y));
         }
 
         public virtual void Update()
@@ -44,6 +46,8 @@ namespace GameDev.Source.Engine
             {
                 Spritesheet.X = 0;
             }
+
+            colBox.TransformCollision(new Rectangle((int)position.X, (int)position.Y, (int)dimensions.X, (int)dimensions.Y));
         }
 
         public virtual void Draw()

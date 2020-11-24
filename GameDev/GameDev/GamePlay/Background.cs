@@ -52,8 +52,8 @@ namespace GameDev.GamePlay
                     (
                         0,
                         0,
-                        64,
-                        64
+                        1920,
+                        1080
                     ),
                     Color.White,
                     0.0f,

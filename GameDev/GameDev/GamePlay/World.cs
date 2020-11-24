@@ -20,10 +20,18 @@ namespace GameDev.Source
     public class World
     {
         public MainHero Hero;
+        public List<Sprites> WorldObjects;
 
-        public World()
+        public World(List<Sprites> objecten)
         {
             Hero = new MainHero(new Vector2(300, 500), new Vector2(48, 48), new Rectangle(0, 0, 32, 32));
+
+            WorldObjects = new List<Sprites>();
+
+            foreach (Sprites item in objecten)
+            {
+                WorldObjects.Add(item);
+            }
 
             Globals.Coinage = 0;
             Globals.IsPaused = false;
@@ -31,13 +39,14 @@ namespace GameDev.Source
 
         public virtual void Update()
         {
+            foreach (Sprites item in WorldObjects)
+            {
+                item.Update();
+            }
+
             if (!Globals.IsPaused)
             {
                 Hero.Update();
-            }
-            else
-            {
-
             }
 
             Keyboard.GetState();
@@ -50,6 +59,11 @@ namespace GameDev.Source
         public virtual void Draw()
         {
             Hero.Draw();
+
+            foreach (Sprites item in WorldObjects)
+            {
+                item.Draw();
+            }
         }
     }
 }

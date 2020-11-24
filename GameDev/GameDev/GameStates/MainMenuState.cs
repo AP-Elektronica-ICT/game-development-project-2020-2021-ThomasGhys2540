@@ -23,35 +23,34 @@ namespace GameDev.GameStates
         
         public MainMenuState(Main main, GraphicsDevice graphicsDevice) : base (main, graphicsDevice)
         {
-            var ButtonTexture = Globals.contentManager.Load<Texture2D>("Sprites\\Button");
+            var PlayButtonTexture = Globals.contentManager.Load<Texture2D>("Sprites\\PlayButton");
+            var SettingsButtonTexture = Globals.contentManager.Load<Texture2D>("Sprites\\SettingsButton");
+            var QuitButtonTexture = Globals.contentManager.Load<Texture2D>("Sprites\\QuitButton");
             var ButtonFont = Globals.contentManager.Load<SpriteFont>("Fonts\\Arial16");
 
-            var NewGameButton = new Button(ButtonTexture, ButtonFont)
+            var NewGameButton = new Button(PlayButtonTexture, ButtonFont)
             {
-                position = new Vector2((Globals.ScreenWidth / 2) - 200, 200),
-                Text = "New Game",
+                position = new Vector2((Globals.ScreenWidth / 2) - 100, 50)
                 
             };
             NewGameButton.Click += NewGameButtonClick;
 
-            var LoadGameButton = new Button(ButtonTexture, ButtonFont)
+            var SettingsButton = new Button(SettingsButtonTexture, ButtonFont)
             {
-                position = new Vector2((Globals.ScreenWidth / 2) - 200, 350),
-                Text = "Load Game"
+                position = new Vector2((Globals.ScreenWidth / 2) - 100, 300)
             };
-            LoadGameButton.Click += LoadGameButtonClick;
+            SettingsButton.Click += SettingsButtonClick;
 
-            var QuitGameButton = new Button(ButtonTexture, ButtonFont)
+            var QuitGameButton = new Button(QuitButtonTexture, ButtonFont)
             {
-                position = new Vector2((Globals.ScreenWidth / 2) - 200, 500),
-                Text = "Quit Game"
+                position = new Vector2((Globals.ScreenWidth / 2) - 100, 550)
             };
             QuitGameButton.Click += QuitGameButtonClick;
 
             Items = new List<Component>()
             {
                 NewGameButton,
-                LoadGameButton,
+                SettingsButton,
                 QuitGameButton,
             };
         }
@@ -60,7 +59,7 @@ namespace GameDev.GameStates
         {
             _Main.ChangeState(new Level001State(_Main, Graphics));
         }
-        private void LoadGameButtonClick(object sender, EventArgs e)
+        private void SettingsButtonClick(object sender, EventArgs e)
         {
 
         }

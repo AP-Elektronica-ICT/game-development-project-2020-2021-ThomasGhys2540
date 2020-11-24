@@ -22,9 +22,18 @@ namespace GameDev.GameStates
 {
     public class Level001State: State
     {
+        public List<Sprites> Objects;
+        
         public Level001State(Main main, GraphicsDevice graphicsDevice) : base(main, graphicsDevice)
         {
+            Objects = new List<Sprites>();
             
+            for (int i = 0; i <= 320; i+= 32)
+            {
+                Objects.Add(new Sprites("Sprites\\StraightTile", new Vector2(i, 700), new Vector2(32, 32), new Rectangle(0, 0, 32, 32)));
+            }
+            
+            Globals._World = new World(Objects);
         }
 
         public override void Update(GameTime gameTime)

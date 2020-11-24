@@ -24,6 +24,7 @@ namespace GameDev.Source.Engine
         public Texture2D model;
         public SpriteEffects Rotation = SpriteEffects.None;
         public Rectangle Spritesheet;
+        public CollisionBox colBox;
 
 
         public Sprites(string Path, Vector2 Pos, Vector2 Dim, Rectangle spritesheet)
@@ -32,6 +33,8 @@ namespace GameDev.Source.Engine
             dimensions = Dim;
             model = Globals.contentManager.Load<Texture2D>(Path);
             Spritesheet = spritesheet;
+
+            colBox = new CollisionBox(new Rectangle((int)position.X, (int)position.Y, (int)dimensions.X, (int)dimensions.Y));
         }
 
         public virtual void Update()

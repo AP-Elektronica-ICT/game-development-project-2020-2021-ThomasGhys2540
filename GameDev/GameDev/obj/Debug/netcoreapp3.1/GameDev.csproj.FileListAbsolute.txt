@@ -36,7 +36,51 @@ C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\
 C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.genruntimeconfig.cache
 C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\IdleHero.xnb
 C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\RunHero.xnb
-C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\FarBackground.xnb
 C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Fonts\Arial16.xnb
-C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\Play.xnb
-C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\Button.xnb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Fonts\Arial16.xnb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\Button.xnb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\FarBackground.xnb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\IdleHero.xnb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\Play.xnb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\RunHero.xnb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\GameDev.exe
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\GameDev.deps.json
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\GameDev.runtimeconfig.json
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\GameDev.runtimeconfig.dev.json
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\GameDev.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\GameDev.pdb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\Microsoft.VisualBasic.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.Direct2D1.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.Direct3D11.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.Direct3D9.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.DXGI.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.Mathematics.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.MediaFoundation.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.XAudio2.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\SharpDX.XInput.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\debian-x64\native\libuv.so
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\fedora-x64\native\libuv.so
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\opensuse-x64\native\libuv.so
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\osx\native\libuv.dylib
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\rhel-x64\native\libuv.so
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\win7-arm\native\libuv.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\libuv.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\libuv.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.csprojAssemblyReference.cache
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.AssemblyInfoInputs.cache
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.AssemblyInfo.cs
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.csproj.CoreCompileInputs.cache
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.csproj.CopyComplete
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.dll
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.pdb
+C:\Users\tompt\Downloads\tG\game-development-project-2020-2021-ThomasGhys2540-main\GameDev\GameDev\obj\Debug\netcoreapp3.1\GameDev.genruntimeconfig.cache
+C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\Forest.xnb
+C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\PlayButton.xnb
+C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\QuitButton.xnb
+C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\SettingsButton.xnb
+C:\Users\thomm\Dropbox\My PC (LAPTOP-GOP2TTCO)\Documents\School\Electronica-ICT\2e jaar\Game Development\game-development-project-2020-2021-ThomasGhys2540\GameDev\GameDev\bin\Debug\netcoreapp3.1\Content\Sprites\StraightTile.xnb

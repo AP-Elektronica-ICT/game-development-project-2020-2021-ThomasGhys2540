@@ -24,9 +24,9 @@ namespace GameDev
     {
         private GraphicsDeviceManager _graphics;
         private Background background;
-        private Camera camera;
         private State CurrentState;
         private State NextState;
+        Camera2d camera2d;
         
 
         public Main()
@@ -46,8 +46,7 @@ namespace GameDev
 
             _graphics.ApplyChanges();
             
-            camera = new Camera(GraphicsDevice.Viewport);
-
+            camera2d = new Camera2d(GraphicsDevice.Viewport);
             base.Initialize();
         }
 
@@ -56,11 +55,11 @@ namespace GameDev
             Globals.contentManager = this.Content;
             Globals.spriteBatch  = new SpriteBatch(GraphicsDevice);
 
-            Globals._World = new World();
+            Globals._World = new World(new List<Sprites>());
 
             CurrentState = new MainMenuState(this, _graphics.GraphicsDevice);
 
-            background = new Background("Sprites\\FarBackground", new Vector2(Globals.ScreenWidth/2, Globals.ScreenHeight/2), new Vector2(Globals.ScreenWidth, Globals.ScreenHeight));
+            background = new Background("Sprites\\Forest", new Vector2(Globals.ScreenWidth/2, Globals.ScreenHeight/2), new Vector2(Globals.ScreenWidth, Globals.ScreenHeight));
         }
 
         protected override void Update(GameTime gameTime)
@@ -81,7 +80,7 @@ namespace GameDev
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            /*Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
                 background.Draw();
 
@@ -90,18 +89,28 @@ namespace GameDev
                     CurrentState.Draw(gameTime);
                 }
 
-            Globals.spriteBatch.End();*/
-            //Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
-            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.transform);
+            Globals.spriteBatch.End();
+
+            var viewMatrix = camera2d.GetViewMatrix(new Vector2(0, 0));
+
+           if (Globals._World.Hero.position != null)
+           {
+                Vector2 Heropos = new Vector2(Globals._World.Hero.position.X + (Globals._World.Hero.dimensions.X / 2) - 400, 0);
 
 
-            background.Draw();
-
-            if (CurrentState.GetType() == typeof(MainMenuState) || CurrentState.GetType() == typeof(LevelSelectState) || CurrentState.GetType() == typeof(PauseMenuState))
+                viewMatrix = camera2d.GetViewMatrix(Heropos);
+           }
+           else
             {
-                CurrentState.Draw(gameTime);
+                viewMatrix = camera2d.GetViewMatrix(new Vector2(0, 0));
             }
+            
+            Globals.spriteBatch.Begin(transformMatrix: viewMatrix);
 
+                if (CurrentState.GetType() != typeof(MainMenuState) && CurrentState.GetType() != typeof(LevelSelectState) && CurrentState.GetType() != typeof(PauseMenuState))
+                {                
+                    CurrentState.Draw(gameTime);
+                }
 
             Globals.spriteBatch.End();
 
