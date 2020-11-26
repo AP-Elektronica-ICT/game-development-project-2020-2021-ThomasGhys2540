@@ -72,6 +72,11 @@ namespace SwampLands
 
                 Background.Draw();
 
+                if (CurrentGameState.GetType() == typeof(MainMenuState))
+                {
+                    CurrentGameState.Draw(gameTime);
+                }
+
             Globals.SpriteDrawer.End();
             #endregion
 
