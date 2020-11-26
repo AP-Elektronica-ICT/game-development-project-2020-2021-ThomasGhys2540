@@ -29,6 +29,7 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="GameStates\" />
     <Folder Include="UserInterface\" />
   </ItemGroup>
 </Project>
