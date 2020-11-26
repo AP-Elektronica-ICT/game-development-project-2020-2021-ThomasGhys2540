@@ -11,10 +11,50 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Content\Fonts\Arial20.xnb" />
+    <None Remove="Content\Fonts\Arial48.xnb" />
+    <None Remove="Content\Fonts\Arial48Bold.xnb" />
     <None Remove="Content\Sprites\Backgrounds\Forest.xnb" />
+    <None Remove="Content\Sprites\UI\LevelButton.xnb" />
+    <None Remove="Content\Sprites\UI\LevelSelect.xnb" />
+    <None Remove="Content\Sprites\UI\PlayButton.xnb" />
+    <None Remove="Content\Sprites\UI\QuitButton.xnb" />
+    <None Remove="Content\Sprites\UI\SettingsButton.xnb" />
+    <None Remove="Content\Sprites\UI\UICanvas.xnb" />
+    <None Remove="Content\Sprites\UI\UITable.xnb" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Fonts\Arial20.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Arial48.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Arial48Bold.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Sprites\Backgrounds\Forest.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\LevelButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\LevelSelect.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\PlayButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\QuitButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\SettingsButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\UICanvas.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\UITable.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -27,8 +67,5 @@
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserInterface\" />
   </ItemGroup>
 </Project>

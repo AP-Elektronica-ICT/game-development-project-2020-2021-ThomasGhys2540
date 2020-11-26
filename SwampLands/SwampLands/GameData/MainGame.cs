@@ -18,8 +18,10 @@ namespace SwampLands
     public class MainGame : Game
     {
         #region Variables
-        private GraphicsDeviceManager Graphics;
         private GameBackground Background;
+        private GraphicsDeviceManager Graphics;
+        private State CurrentGameState;
+        private State NextGameState;
         #endregion
 
         #region Constructors
@@ -38,6 +40,8 @@ namespace SwampLands
             Globals.SpriteDrawer = new SpriteBatch(GraphicsDevice);
 
             Background = new GameBackground("Sprites\\Backgrounds\\Forest");
+
+            CurrentGameState = new MainMenuState(this, Graphics.GraphicsDevice);
             
             base.LoadContent();
         }
@@ -68,6 +72,11 @@ namespace SwampLands
 
                 Background.Draw();
 
+                if (CurrentGameState.GetType() == typeof(MainMenuState) || CurrentGameState.GetType() == typeof(LevelSelectState))
+                {
+                    CurrentGameState.Draw(gameTime);
+                }
+
             Globals.SpriteDrawer.End();
             #endregion
 
@@ -78,7 +87,25 @@ namespace SwampLands
         #region Update
         protected override void Update(GameTime gameTime)
         {
+            #region GameState Update
+            if (NextGameState != null)
+            {
+                CurrentGameState = NextGameState;
+
+                NextGameState = null;
+            }
+
+            CurrentGameState.Update(gameTime);
+            #endregion
+
             base.Update(gameTime);
+        }
+        #endregion
+
+        #region Methods
+        public void ChangeGameState(State changeTo)
+        {
+            NextGameState = changeTo;
         }
         #endregion
     }
