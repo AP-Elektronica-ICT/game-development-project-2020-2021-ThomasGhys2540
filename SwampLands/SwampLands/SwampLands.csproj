@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -15,6 +15,10 @@
     <None Remove="Content\Fonts\Arial48.xnb" />
     <None Remove="Content\Fonts\Arial48Bold.xnb" />
     <None Remove="Content\Sprites\Backgrounds\Forest.xnb" />
+    <None Remove="Content\Sprites\Platform\BottomTile.xnb" />
+    <None Remove="Content\Sprites\Platform\LeftCornerTile.xnb" />
+    <None Remove="Content\Sprites\Platform\RightCornerTile.xnb" />
+    <None Remove="Content\Sprites\Platform\StraightTile.xnb" />
     <None Remove="Content\Sprites\UI\LevelButton.xnb" />
     <None Remove="Content\Sprites\UI\LevelSelect.xnb" />
     <None Remove="Content\Sprites\UI\PlayButton.xnb" />
@@ -34,6 +38,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\Backgrounds\Forest.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\BottomTile.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\LeftCornerTile.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\RightCornerTile.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\StraightTile.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\UI\LevelButton.xnb">
@@ -67,8 +83,5 @@
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GameElements\" />
   </ItemGroup>
 </Project>

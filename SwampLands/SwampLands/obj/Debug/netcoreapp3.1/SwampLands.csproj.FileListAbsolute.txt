@@ -82,3 +82,7 @@ C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLa
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Fonts\Arial48Bold.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\LevelSelect.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\UITable.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\BottomTile.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\LeftCornerTile.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\RightCornerTile.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\StraightTile.xnb

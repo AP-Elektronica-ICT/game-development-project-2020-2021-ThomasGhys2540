@@ -80,6 +80,17 @@ namespace SwampLands
             Globals.SpriteDrawer.End();
             #endregion
 
+            #region Level Spritebatch Call
+            Globals.SpriteDrawer.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+
+                if (CurrentGameState.GetType() != typeof(MainMenuState) || CurrentGameState.GetType() != typeof(LevelSelectState))
+                {
+                    CurrentGameState.Draw(gameTime);
+                }
+
+            Globals.SpriteDrawer.End();
+            #endregion
+
             base.Draw(gameTime);
         }
         #endregion
