@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace SwampLands
 {
-    abstract class State
+    public abstract class State
     {
         #region Variables
         protected GraphicsDevice Graphics;
