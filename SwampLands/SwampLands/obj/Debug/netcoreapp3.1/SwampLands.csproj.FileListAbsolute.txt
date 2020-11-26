@@ -75,3 +75,10 @@ C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLa
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\PlayButton.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\QuitButton.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\SettingsButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\UICanvas.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Fonts\Arial20.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\LevelButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Fonts\Arial48.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Fonts\Arial48Bold.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\LevelSelect.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\UITable.xnb

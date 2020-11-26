@@ -64,7 +64,7 @@ namespace SwampLands
         #region Methods
         private void PlayGameButtonClick(object sender, EventArgs e)
         {
-            
+            Main.ChangeGameState(new LevelSelectState(Main, Graphics));
         }
 
         private void SettingsButtonClick(object sender, EventArgs e)

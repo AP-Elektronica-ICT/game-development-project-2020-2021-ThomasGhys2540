@@ -25,6 +25,8 @@ namespace SwampLands
         public Rectangle Configuration;
         private MouseState CurrentMouseState;
         private MouseState OldeMouseState;
+        private SpriteFont Font;
+        private String ButtonText;
         private Texture2D ButtonSprite;
         #endregion
 
@@ -33,6 +35,14 @@ namespace SwampLands
         {
             ButtonSprite = Globals.ContentLoader.Load<Texture2D>(path);
             Configuration = configuration;
+        }
+
+        public Button(string path, Rectangle configuration, string buttonText)
+        {
+            ButtonSprite = Globals.ContentLoader.Load<Texture2D>(path);
+            Configuration = configuration;
+            ButtonText = buttonText;
+            Font = Globals.ContentLoader.Load<SpriteFont>("Fonts\\Arial48Bold");
         }
         #endregion
 
@@ -47,6 +57,14 @@ namespace SwampLands
             }
 
             Globals.SpriteDrawer.Draw(ButtonSprite, Configuration, ButtonColourFilter);
+
+            if (!string.IsNullOrEmpty(ButtonText))
+            {
+                var X = (Configuration.X + (Configuration.Width / 2)) - (Font.MeasureString(ButtonText).X / 2);
+                var Y = (Configuration.Y + (Configuration.Width / 2)) - (Font.MeasureString(ButtonText).Y / 2);
+
+                Globals.SpriteDrawer.DrawString(Font, ButtonText, new Vector2(X, Y), Color.Black);
+            }
         }
         #endregion
 

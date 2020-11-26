@@ -72,7 +72,7 @@ namespace SwampLands
 
                 Background.Draw();
 
-                if (CurrentGameState.GetType() == typeof(MainMenuState))
+                if (CurrentGameState.GetType() == typeof(MainMenuState) || CurrentGameState.GetType() == typeof(LevelSelectState))
                 {
                     CurrentGameState.Draw(gameTime);
                 }
