@@ -15,7 +15,31 @@ using Microsoft.Xna.Framework.Media;
 
 namespace SwampLands
 {
-    class Level01
+    class Level01 : State
     {
+        #region Variables
+
+        #endregion
+
+        #region Constructors
+        public Level01(MainGame main, GraphicsDevice graphicsDevice) : base(main, graphicsDevice)
+        {
+
+        }
+        #endregion
+
+        #region Draw
+        public override void Draw(GameTime gameTime)
+        {
+            
+        }
+        #endregion
+
+        #region Update
+        public override void Update(GameTime gameTime)
+        {
+            
+        }
+        #endregion
     }
 }

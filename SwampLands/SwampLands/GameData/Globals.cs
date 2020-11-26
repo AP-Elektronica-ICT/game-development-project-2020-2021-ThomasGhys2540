@@ -28,5 +28,9 @@ namespace SwampLands
         public static int ScreenHeight;
         public static int ScreenWidth;
         #endregion
+
+        #region World
+
+        #endregion
     }
 }
