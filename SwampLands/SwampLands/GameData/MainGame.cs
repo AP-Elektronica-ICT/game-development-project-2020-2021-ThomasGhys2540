@@ -18,6 +18,7 @@ namespace SwampLands
     public class MainGame : Game
     {
         #region Variables
+        private Camera Camera2D;
         private GameBackground Background;
         private GraphicsDeviceManager Graphics;
         private State CurrentGameState;
@@ -57,7 +58,9 @@ namespace SwampLands
             Graphics.PreferredBackBufferHeight = Globals.ScreenHeight;
 
             Graphics.ApplyChanges();
-            
+
+            Camera2D = new Camera(Graphics.GraphicsDevice.Viewport);
+
             base.Initialize();
         }
         #endregion
@@ -80,8 +83,23 @@ namespace SwampLands
             Globals.SpriteDrawer.End();
             #endregion
 
+            #region Calculate Camera ViewMatrix
+            var ViewMatrix = Camera2D.GetViewMatrix(Vector2.Zero);
+
+            if (Globals.WorldSystem != null)
+            {
+                Vector2 PlayerPosition = new Vector2(Globals.WorldSystem.PlayerCharacter.Hitbox.X + (Globals.WorldSystem.PlayerCharacter.Hitbox.Width / 2) - 400, 0);
+
+                ViewMatrix = Camera2D.GetViewMatrix(PlayerPosition);
+            }
+            else
+            {
+                ViewMatrix = Camera2D.GetViewMatrix(Vector2.Zero);
+            }
+            #endregion
+
             #region Level Spritebatch Call
-            Globals.SpriteDrawer.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+            Globals.SpriteDrawer.Begin(transformMatrix: ViewMatrix);
 
                 if (CurrentGameState.GetType() != typeof(MainMenuState) || CurrentGameState.GetType() != typeof(LevelSelectState))
                 {
