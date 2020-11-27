@@ -30,7 +30,8 @@ namespace SwampLands
         #endregion
 
         #region World
-
+        public static Boolean IsPaused;
+        public static World WorldSystem;
         #endregion
     }
 }

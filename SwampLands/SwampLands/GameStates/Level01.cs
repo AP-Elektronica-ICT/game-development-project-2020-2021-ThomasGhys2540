@@ -29,8 +29,10 @@ namespace SwampLands
             #endregion
 
             #region Creating World Platforms
-            Platforms.Add(new Platform(new Vector2(200, 600), 3, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(300, 500), 2, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(100, 800), 30, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(500, 768), 2, Rotation.Vertical));
+
+            Globals.WorldSystem = new World(Platforms);
             #endregion
         }
         #endregion
@@ -38,17 +40,14 @@ namespace SwampLands
         #region Draw
         public override void Draw(GameTime gameTime)
         {
-            foreach (Platform _Platform in Platforms)
-            {
-                _Platform.Draw(gameTime);
-            }
+            Globals.WorldSystem.Draw(gameTime);
         }
         #endregion
 
         #region Update
         public override void Update(GameTime gameTime)
         {
-            
+            Globals.WorldSystem.Update(gameTime);
         }
         #endregion
     }

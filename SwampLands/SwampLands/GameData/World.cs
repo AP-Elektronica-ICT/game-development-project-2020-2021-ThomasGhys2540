@@ -13,9 +13,49 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 #endregion
 
-namespace SwampLands.GameData
+namespace SwampLands
 {
     class World
     {
+        #region Variables
+        List<Platform> WorldObjects;
+        #endregion
+
+        #region Constructors
+        public World(List<Platform> worldPlatforms)
+        {
+            #region Instantiate World Variables
+            WorldObjects = new List<Platform>();
+            #endregion
+
+            #region Instantiate Global Variables
+            Globals.IsPaused = false;
+            #endregion
+
+            #region Create Platforms
+            foreach(Platform platform in worldPlatforms)
+            {
+                WorldObjects.Add(platform);
+            }
+            #endregion
+        }
+        #endregion
+
+        #region Draw
+        public virtual void Draw(GameTime gameTime)
+        {
+            foreach (Platform platform in WorldObjects)
+            {
+                platform.Draw(gameTime);
+            }
+        }
+        #endregion
+
+        #region Update
+        public virtual void Update(GameTime gameTime)
+        {
+
+        }
+        #endregion
     }
 }
