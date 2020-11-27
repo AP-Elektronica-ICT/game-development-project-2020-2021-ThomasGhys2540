@@ -26,11 +26,11 @@ namespace SwampLands
         {
             var LevelSelectCanvas = new Canvas("Sprites\\UI\\UICanvas", new Rectangle(((int)Globals.ScreenWidth /2) - 250, ((int)Globals.ScreenHeight / 2) - 175, 500, 350));
             var LevelSelectTable = new Canvas("Sprites\\UI\\UITable", new Rectangle(((int)Globals.ScreenWidth / 2) - 200, ((int)Globals.ScreenHeight / 2) - 125, 400, 250));
-            var LevelSelectTitle = new Canvas("Sprites\\UI\\LevelSelect", new Rectangle(((int)Globals.ScreenWidth / 2) - 225, ((int)Globals.ScreenHeight / 2) - 275, 500, 200));
-            var Level01 = new Button("Sprites\\UI\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 125, LevelSelectCanvas.Configuration.Top + 75, 100, 100), "1");
-            var Level02 = new Button("Sprites\\UI\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 275, LevelSelectCanvas.Configuration.Top + 75, 100, 100), "2");
-            var Level03 = new Button("Sprites\\UI\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 125, LevelSelectCanvas.Configuration.Top + 175, 100, 100), "3");
-            var Level04 = new Button("Sprites\\UI\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 275, LevelSelectCanvas.Configuration.Top + 175, 100, 100), "4");
+            var LevelSelectTitle = new Canvas("Sprites\\UI\\Titles\\LevelSelect", new Rectangle(((int)Globals.ScreenWidth / 2) - 225, ((int)Globals.ScreenHeight / 2) - 275, 500, 200));
+            var Level01 = new Button("Sprites\\UI\\Buttons\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 125, LevelSelectCanvas.Configuration.Top + 75, 100, 100), "1");
+            var Level02 = new Button("Sprites\\UI\\Buttons\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 275, LevelSelectCanvas.Configuration.Top + 75, 100, 100), "2");
+            var Level03 = new Button("Sprites\\UI\\Buttons\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 125, LevelSelectCanvas.Configuration.Top + 175, 100, 100), "3");
+            var Level04 = new Button("Sprites\\UI\\Buttons\\LevelButton", new Rectangle(LevelSelectCanvas.Configuration.Left + 275, LevelSelectCanvas.Configuration.Top + 175, 100, 100), "4");
 
             Level01.ClickButton += Level01ButtonClick;
             Level02.ClickButton += Level02ButtonClick;
@@ -73,7 +73,7 @@ namespace SwampLands
         #region Methods
         private void Level01ButtonClick(object sender, EventArgs e)
         {
-            Main.ChangeGameState(new Level01(Main, Graphics));
+            Globals.ChangeGameState(new Level01(Main, Graphics));
         }
         private void Level02ButtonClick(object sender, EventArgs e)
         {

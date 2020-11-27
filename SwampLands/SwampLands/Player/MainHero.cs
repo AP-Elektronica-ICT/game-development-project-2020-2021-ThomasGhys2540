@@ -31,8 +31,6 @@ namespace SwampLands
         private int Speed;
         private int SpriteSheetSize;
         private int UpdateSpriteAnimation;
-        private KeyboardState CurrentKeyBoardState;
-        private KeyboardState OldKeyBoardState;
         private Rectangle Configuration;
         private Rectangle SpriteSheet;
         private SpriteEffects HeroSpriteEffect;
@@ -168,11 +166,25 @@ namespace SwampLands
 
                 Velocity.Y = JumpForce;
             }
+
+            if (CollisionManager.HasCollidedTop())
+            {
+                Velocity.Y -= JumpForce / 3;
+            }
             #endregion
 
             #region Movement Update
             Configuration.X += (int)(Velocity.X);
             Configuration.Y += (int)(Velocity.Y * _Time * GravityModifier);
+            #endregion
+
+            #region HeroDeath
+            #region OutOfBounds
+            if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < 0)
+            {
+                Globals.ChangeGameState(new GameOverState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
+            }
+            #endregion
             #endregion
 
             #region Animate Sprite

@@ -72,15 +72,10 @@ C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLa
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\obj\Debug\netcoreapp3.1\SwampLands.dll
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\obj\Debug\netcoreapp3.1\SwampLands.pdb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\obj\Debug\netcoreapp3.1\SwampLands.genruntimeconfig.cache
-C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\PlayButton.xnb
-C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\QuitButton.xnb
-C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\SettingsButton.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\UICanvas.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Fonts\Arial20.xnb
-C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\LevelButton.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Fonts\Arial48.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Fonts\Arial48Bold.xnb
-C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\LevelSelect.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\UITable.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\BottomTile.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\LeftCornerTile.xnb
@@ -88,3 +83,11 @@ C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLa
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\StraightTile.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Hero\IdleHero.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Hero\RunHero.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Titles\GameOver.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\LevelButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Titles\LevelSelect.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\MenuButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\PlayButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\QuitButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\RestartButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\SettingsButton.xnb

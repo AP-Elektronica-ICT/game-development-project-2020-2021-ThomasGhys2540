@@ -21,8 +21,6 @@ namespace SwampLands
         private Camera Camera2D;
         private GameBackground Background;
         private GraphicsDeviceManager Graphics;
-        private State CurrentGameState;
-        private State NextGameState;
         #endregion
 
         #region Constructors
@@ -42,7 +40,7 @@ namespace SwampLands
 
             Background = new GameBackground("Sprites\\Backgrounds\\Forest");
 
-            CurrentGameState = new MainMenuState(this, Graphics.GraphicsDevice);
+            Globals.CurrentGameState = new MainMenuState(this, Graphics.GraphicsDevice);
             
             base.LoadContent();
         }
@@ -75,9 +73,9 @@ namespace SwampLands
 
                 Background.Draw();
 
-                if (CurrentGameState.GetType() == typeof(MainMenuState) || CurrentGameState.GetType() == typeof(LevelSelectState))
+                if (Globals.CurrentGameState.GetType() == typeof(MainMenuState) || Globals.CurrentGameState.GetType() == typeof(LevelSelectState) || Globals.CurrentGameState.GetType() == typeof(GameOverState))
                 {
-                    CurrentGameState.Draw(gameTime);
+                    Globals.CurrentGameState.Draw(gameTime);
                 }
 
             Globals.SpriteDrawer.End();
@@ -101,9 +99,9 @@ namespace SwampLands
             #region Level Spritebatch Call
             Globals.SpriteDrawer.Begin(transformMatrix: ViewMatrix);
 
-                if (CurrentGameState.GetType() != typeof(MainMenuState) || CurrentGameState.GetType() != typeof(LevelSelectState))
+                if (Globals.CurrentGameState.GetType() != typeof(MainMenuState) || Globals.CurrentGameState.GetType() != typeof(LevelSelectState) || Globals.CurrentGameState.GetType() != typeof(GameOverState))
                 {
-                    CurrentGameState.Draw(gameTime);
+                    Globals.CurrentGameState.Draw(gameTime);
                 }
 
             Globals.SpriteDrawer.End();
@@ -117,24 +115,17 @@ namespace SwampLands
         protected override void Update(GameTime gameTime)
         {
             #region GameState Update
-            if (NextGameState != null)
+            if (Globals.NextGameState != null)
             {
-                CurrentGameState = NextGameState;
+                Globals.CurrentGameState = Globals.NextGameState;
 
-                NextGameState = null;
+                Globals.NextGameState = null;
             }
 
-            CurrentGameState.Update(gameTime);
+            Globals.CurrentGameState.Update(gameTime);
             #endregion
 
             base.Update(gameTime);
-        }
-        #endregion
-
-        #region Methods
-        public void ChangeGameState(State changeTo)
-        {
-            NextGameState = changeTo;
         }
         #endregion
     }

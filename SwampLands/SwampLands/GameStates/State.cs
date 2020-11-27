@@ -18,8 +18,8 @@ namespace SwampLands
     public abstract class State
     {
         #region Variables
-        protected GraphicsDevice Graphics;
-        protected MainGame Main;
+        public GraphicsDevice Graphics;
+        public MainGame Main;
         #endregion
 
         #region Constructors

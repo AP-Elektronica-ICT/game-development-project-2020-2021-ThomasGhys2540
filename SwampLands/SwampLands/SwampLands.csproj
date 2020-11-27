@@ -21,10 +21,13 @@
     <None Remove="Content\Sprites\Platform\LeftCornerTile.xnb" />
     <None Remove="Content\Sprites\Platform\RightCornerTile.xnb" />
     <None Remove="Content\Sprites\Platform\StraightTile.xnb" />
+    <None Remove="Content\Sprites\UI\GameOver.xnb" />
     <None Remove="Content\Sprites\UI\LevelButton.xnb" />
     <None Remove="Content\Sprites\UI\LevelSelect.xnb" />
+    <None Remove="Content\Sprites\UI\menu.xnb" />
     <None Remove="Content\Sprites\UI\PlayButton.xnb" />
     <None Remove="Content\Sprites\UI\QuitButton.xnb" />
+    <None Remove="Content\Sprites\UI\RestartButton.xnb" />
     <None Remove="Content\Sprites\UI\SettingsButton.xnb" />
     <None Remove="Content\Sprites\UI\UICanvas.xnb" />
     <None Remove="Content\Sprites\UI\UITable.xnb" />
@@ -60,19 +63,28 @@
     <Content Include="Content\Sprites\Platform\StraightTile.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\UI\LevelButton.xnb">
+    <Content Include="Content\Sprites\UI\Titles\GameOver.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\UI\LevelSelect.xnb">
+    <Content Include="Content\Sprites\UI\Buttons\LevelButton.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\UI\PlayButton.xnb">
+    <Content Include="Content\Sprites\UI\Titles\LevelSelect.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\UI\QuitButton.xnb">
+    <Content Include="Content\Sprites\UI\Buttons\MenuButton.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Sprites\UI\SettingsButton.xnb">
+    <Content Include="Content\Sprites\UI\Buttons\PlayButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\QuitButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\RestartButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\SettingsButton.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Sprites\UI\UICanvas.xnb">

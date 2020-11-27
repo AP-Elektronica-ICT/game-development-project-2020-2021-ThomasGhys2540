@@ -27,6 +27,16 @@ namespace SwampLands
         //Screen Resolution
         public static int ScreenHeight;
         public static int ScreenWidth;
+
+        //GameState
+        public static State CurrentGameState;
+        public static State NextGameState;
+
+        //Change GameState
+        public  static void ChangeGameState(State changeTo)
+        {
+            NextGameState = changeTo;
+        }
         #endregion
 
         #region World
