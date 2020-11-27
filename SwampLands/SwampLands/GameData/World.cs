@@ -18,8 +18,8 @@ namespace SwampLands
     class World
     {
         #region Variables
-        List<Platform> WorldObjects;
-        MainHero PlayerCharacter;
+        public List<Platform> WorldObjects;
+        public MainHero PlayerCharacter;
         #endregion
 
         #region Constructors

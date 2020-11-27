@@ -20,6 +20,8 @@ namespace SwampLands
     class Platform : Object2D
     {
         #region Variables
+        public Rectangle HitBox;
+        
         private List<PlatformTiles> PlatformParts;
         private Texture2D BottomTile;
         private Texture2D MiddleTile;
@@ -39,13 +41,15 @@ namespace SwampLands
             LeftTile = Globals.ContentLoader.Load<Texture2D>("Sprites\\Platform\\LeftCornerTile");
             RightTile = Globals.ContentLoader.Load<Texture2D>("Sprites\\Platform\\RightCornerTile");
 
-            SpriteDimensions = new Vector2(32, 32);
+            SpriteDimensions = new Vector2(50, 50);
+            HitBox = Rectangle.Empty;
             #endregion
 
             #region Create Platform
             switch (rotation)
             {
                 case Rotation.Horizontal:
+                    #region onfigure Platform
                     if (platformTileLength == 1)
                     {
                         PlatformParts.Add(new PlatformTiles(MiddleTile, position, SpriteDimensions));
@@ -66,8 +70,14 @@ namespace SwampLands
 
                         PlatformParts.Add(new PlatformTiles(RightTile, new Vector2(position.X + (SpriteDimensions.X * (platformTileLength -1)), position.Y), SpriteDimensions));
                     }
+                    #endregion
+
+                    #region Set Platform HitBox
+                    HitBox = new Rectangle((int)position.X, (int)position.Y, (int)(SpriteDimensions.X * platformTileLength), (int)SpriteDimensions.Y);
+                    #endregion
                     break;
                 case Rotation.Vertical:
+                    #region Configure Platform
                     if (platformTileLength == 1)
                     {
                         PlatformParts.Add(new PlatformTiles(MiddleTile, position, SpriteDimensions));
@@ -81,6 +91,11 @@ namespace SwampLands
                             PlatformParts.Add(new PlatformTiles(BottomTile, new Vector2(position.X, position.Y + (SpriteDimensions.Y * i)), SpriteDimensions));
                         }
                     }
+                    #endregion
+
+                    #region Set Platform HitBox
+                    HitBox = new Rectangle((int)position.X, (int)position.Y, (int)SpriteDimensions.X, (int)(SpriteDimensions.Y * platformTileLength));
+                    #endregion
                     break;
                 default:
                     break;

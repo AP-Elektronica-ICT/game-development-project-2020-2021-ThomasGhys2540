@@ -30,7 +30,9 @@ namespace SwampLands
 
             #region Creating World Platforms
             Platforms.Add(new Platform(new Vector2(100, 800), 30, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(500, 768), 2, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(500, 750), 6, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(700, 600), 3, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(1000, 500), 6, Rotation.Vertical));
 
             Globals.WorldSystem = new World(Platforms);
             #endregion
