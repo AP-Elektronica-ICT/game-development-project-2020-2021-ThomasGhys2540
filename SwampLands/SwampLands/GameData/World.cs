@@ -19,6 +19,7 @@ namespace SwampLands
     {
         #region Variables
         List<Platform> WorldObjects;
+        MainHero PlayerCharacter;
         #endregion
 
         #region Constructors
@@ -26,6 +27,7 @@ namespace SwampLands
         {
             #region Instantiate World Variables
             WorldObjects = new List<Platform>();
+            PlayerCharacter = new MainHero();
             #endregion
 
             #region Instantiate Global Variables
@@ -44,17 +46,25 @@ namespace SwampLands
         #region Draw
         public virtual void Draw(GameTime gameTime)
         {
+            #region Draw World Platforms
             foreach (Platform platform in WorldObjects)
             {
                 platform.Draw(gameTime);
             }
+            #endregion
+
+            #region Draw Hero
+            PlayerCharacter.Draw(gameTime);
+            #endregion
         }
         #endregion
 
         #region Update
         public virtual void Update(GameTime gameTime)
         {
-
+            #region Update Hero
+            PlayerCharacter.Update(gameTime);
+            #endregion
         }
         #endregion
     }
