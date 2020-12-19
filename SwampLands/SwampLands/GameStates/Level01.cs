@@ -29,13 +29,28 @@ namespace SwampLands
             #endregion
 
             #region Creating World Platforms
-            Platforms.Add(new Platform(new Vector2(100, 800), 30, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(500, 750), 6, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(700, 600), 3, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(1000, 500), 6, Rotation.Vertical));
-
+            Platforms.Add(new Platform(new Vector2(0, 800), 30, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(0, 500), 7, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(450, 750), 3, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(900, 750), 6, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(900, 700), 3, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(1600, 650), 3, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(1900, 100), 10, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(1950, 100), 10, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2000, 100), 10, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2050, 100), 10, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2000, 800), 2, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(2600, 800), 6, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(2300, 650), 4, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(2750, 450), 4, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(3000, 675), 2, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(3250, 534), 3, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2250, 333), 3, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2450, 180), 1, Rotation.Vertical));
             Globals.WorldSystem = new World(Platforms);
             #endregion
+
+            Globals.Level = this;
         }
         #endregion
 

@@ -51,7 +51,7 @@ namespace SwampLands
 
             #region Hero configuration
             HeroSprite = IdleSprite;
-            Configuration = new Rectangle(200, 700, 32, 32);
+            Configuration = new Rectangle(100, 700, 32, 32);
             SpriteSheet = new Rectangle(0, 0, 32, 32);
             SpriteShade = Color.White;
             SpriteRotation = 0.0f;
@@ -180,7 +180,7 @@ namespace SwampLands
 
             #region HeroDeath
             #region OutOfBounds
-            if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < 0)
+            if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < -25)
             {
                 Globals.ChangeGameState(new GameOverState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
             }

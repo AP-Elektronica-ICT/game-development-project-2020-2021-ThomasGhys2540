@@ -77,15 +77,15 @@ namespace SwampLands
         }
         private void Level02ButtonClick(object sender, EventArgs e)
         {
-            
+            Globals.ChangeGameState(new Level02(Main, Graphics));
         }
         private void Level03ButtonClick(object sender, EventArgs e)
         {
-            
+            Globals.ChangeGameState(new Level03(Main, Graphics));
         }
         private void Level04ButtonClick(object sender, EventArgs e)
         {
-            
+            Globals.ChangeGameState(new Level04(Main, Graphics));
         }
         #endregion
     }

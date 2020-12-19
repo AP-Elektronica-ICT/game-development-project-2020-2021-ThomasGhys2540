@@ -31,6 +31,7 @@ namespace SwampLands
         //GameState
         public static State CurrentGameState;
         public static State NextGameState;
+        public static State Level;
 
         //Change GameState
         public  static void ChangeGameState(State changeTo)

@@ -71,7 +71,7 @@ namespace SwampLands
         #region Methods
         private void RestartButtonClick(object sender, EventArgs e)
         {
-            Globals.ChangeGameState(new Level01(Main, Graphics));
+            Globals.ChangeGameState(Globals.Level);
         }
 
         private void LevelSelectButtonClick(object sender, EventArgs e)
