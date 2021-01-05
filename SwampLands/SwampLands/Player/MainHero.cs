@@ -89,7 +89,7 @@ namespace SwampLands
             #endregion
 
             #region Gravity
-            if (CollisionManager.HasCollidedBottom("platform"))
+            if (CollisionManager.HasCollidedBottom("platform") || CollisionManager.HasCollidedBottom("movingplatform"))
             {
                 Velocity.Y = 0;
                 HasJumped = false;
@@ -180,7 +180,7 @@ namespace SwampLands
 
             #region HeroDeath
             #region OutOfBounds
-            if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < -25)
+            if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < -50)
             {
                 Globals.ChangeGameState(new GameOverState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
             }

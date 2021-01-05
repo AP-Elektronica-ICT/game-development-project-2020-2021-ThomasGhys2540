@@ -19,6 +19,7 @@ namespace SwampLands
     {
         #region Variables
         private List<Platform> Platforms;
+        private List<MovingPlatform> MovingPlatforms;
         #endregion
 
         #region Constructors
@@ -26,6 +27,7 @@ namespace SwampLands
         {
             #region Initialise Variables
             Platforms = new List<Platform>();
+            MovingPlatforms = new List<MovingPlatform>();
             #endregion
 
             #region Creating World Platforms
@@ -39,17 +41,20 @@ namespace SwampLands
             Platforms.Add(new Platform(new Vector2(1950, 100), 10, Rotation.Vertical));
             Platforms.Add(new Platform(new Vector2(2000, 100), 10, Rotation.Vertical));
             Platforms.Add(new Platform(new Vector2(2050, 100), 10, Rotation.Vertical));
-            Platforms.Add(new Platform(new Vector2(2000, 800), 2, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2600, 800), 6, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2300, 650), 4, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2750, 450), 4, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(3000, 675), 2, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(3250, 534), 3, Rotation.Vertical));
             Platforms.Add(new Platform(new Vector2(2250, 333), 3, Rotation.Vertical));
-            Platforms.Add(new Platform(new Vector2(2450, 180), 1, Rotation.Vertical));
             #endregion
 
-            Globals.WorldSystem = new World(Platforms, new Vector2(1950, 50));
+            #region Creating World Moving Platforms
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(1900, 800), new Vector2(1700, 800), new Vector2(2300, 800), Direction.Horizontal));
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(2450, 180), new Vector2(2450, 100), new Vector2(2450, 250), Direction.Vertical));
+            #endregion
+
+            Globals.WorldSystem = new World(Platforms, new Vector2(1950, 50), MovingPlatforms);
             Globals.Level = Levels.level01;
         }
         #endregion

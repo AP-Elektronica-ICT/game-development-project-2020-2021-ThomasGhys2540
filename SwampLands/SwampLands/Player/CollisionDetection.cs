@@ -99,6 +99,21 @@ namespace SwampLands
                         }
                     }
                     break;
+                case "movingplatform":
+                    foreach (MovingPlatform platform in Globals.WorldSystem.WorldMovingPlatforms)
+                    {
+                        if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.Hitbox))
+                        {
+                            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < platform.Hitbox.Top &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > platform.Hitbox.Top &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left > platform.Hitbox.Left - Offset &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Right < platform.Hitbox.Right + Offset)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    break;
                 default:
                     break;
             }

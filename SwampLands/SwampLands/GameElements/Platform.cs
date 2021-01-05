@@ -117,7 +117,7 @@ namespace SwampLands
         #region Update
         public override void Update(GameTime gameTime)
         {
-            
+
         }
         #endregion
     }

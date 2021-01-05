@@ -20,15 +20,17 @@ namespace SwampLands
         #region Variables
         public EndFlag Checkpoint;
         public List<Platform> WorldObjects;
+        public List<MovingPlatform> WorldMovingPlatforms;
         public MainHero PlayerCharacter;
         #endregion
 
         #region Constructors
-        public World(List<Platform> worldPlatforms, Vector2 checkpoint)
+        public World(List<Platform> worldPlatforms, Vector2 checkpoint, List<MovingPlatform> movingPlatforms)
         {
             #region Instantiate World Variables
             WorldObjects = new List<Platform>();
             PlayerCharacter = new MainHero();
+            WorldMovingPlatforms = new List<MovingPlatform>();
             #endregion
 
             #region Instantiate Global Variables
@@ -39,6 +41,11 @@ namespace SwampLands
             foreach(Platform platform in worldPlatforms)
             {
                 WorldObjects.Add(platform);
+            }
+
+            foreach (MovingPlatform platform in movingPlatforms)
+            {
+                WorldMovingPlatforms.Add(platform);
             }
             #endregion
 
@@ -53,6 +60,11 @@ namespace SwampLands
         {
             #region Draw World Platforms
             foreach (Platform platform in WorldObjects)
+            {
+                platform.Draw(gameTime);
+            }
+
+            foreach (MovingPlatform platform in WorldMovingPlatforms)
             {
                 platform.Draw(gameTime);
             }
@@ -73,6 +85,18 @@ namespace SwampLands
         {
             #region Update Hero
             PlayerCharacter.Update(gameTime);
+            #endregion
+
+            #region Update World Objects
+            foreach (Platform platform in WorldObjects)
+            {
+                platform.Update(gameTime);
+            }
+
+            foreach (MovingPlatform platform in WorldMovingPlatforms)
+            {
+                platform.Update(gameTime);
+            }
             #endregion
 
             #region Update Checkpoint

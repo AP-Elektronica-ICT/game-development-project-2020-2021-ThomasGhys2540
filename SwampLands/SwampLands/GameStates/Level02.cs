@@ -19,6 +19,7 @@ namespace SwampLands
     {
         #region Variables
         private List<Platform> Platforms;
+        private List<MovingPlatform> MovingPlatforms;
         #endregion
 
         #region Constructors
@@ -26,6 +27,7 @@ namespace SwampLands
         {
             #region Initialise Variables
             Platforms = new List<Platform>();
+            MovingPlatforms = new List<MovingPlatform>();
             #endregion
 
             #region Creating World Platforms
@@ -41,18 +43,20 @@ namespace SwampLands
             Platforms.Add(new Platform(new Vector2(1350, 400), 3, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(1400, 350), 2, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(1450, 300), 1, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(2200, 600), 2, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2700, 800), 10, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(2950, 650), 8, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(3050, 500), 8, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(2950, 350), 8, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(3050, 200), 8, Rotation.Horizontal));
-            Platforms.Add(new Platform(new Vector2(4600, 800), 2, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(6000, 800), 3, Rotation.Horizontal));
-
             #endregion
 
-            Globals.WorldSystem = new World(Platforms, new Vector2(6050, 750));
+            #region Create World Moving Platforms
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(2200, 600), new Vector2(1600, 600), new Vector2(2500, 600), Direction.Horizontal, 2, 250));
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(2950, 650), new Vector2(2750, 650), new Vector2(3100, 650), Direction.Horizontal, 2));
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(2950, 500), new Vector2(2750, 500), new Vector2(3100, 500), Direction.Horizontal, 4));
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(3000, 350), new Vector2(2750, 350), new Vector2(3100, 350), Direction.Horizontal, 4));
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(3000, 200), new Vector2(2750, 200), new Vector2(3100, 200), Direction.Horizontal, 2));
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(4600, 800), new Vector2(3500, 800), new Vector2(5800, 800), Direction.Horizontal, 4));
+            #endregion
+
+            Globals.WorldSystem = new World(Platforms, new Vector2(6050, 750), MovingPlatforms);
             Globals.Level = Levels.level02;
         }
         #endregion
