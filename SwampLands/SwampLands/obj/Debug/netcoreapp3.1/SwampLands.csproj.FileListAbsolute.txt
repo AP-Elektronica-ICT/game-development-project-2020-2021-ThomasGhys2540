@@ -91,3 +91,6 @@ C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLa
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\QuitButton.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\RestartButton.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\SettingsButton.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Checkpoint\Checkpoint.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Titles\Victory.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\NextLevelButton.xnb

@@ -47,10 +47,10 @@ namespace SwampLands
             Platforms.Add(new Platform(new Vector2(3250, 534), 3, Rotation.Vertical));
             Platforms.Add(new Platform(new Vector2(2250, 333), 3, Rotation.Vertical));
             Platforms.Add(new Platform(new Vector2(2450, 180), 1, Rotation.Vertical));
-            Globals.WorldSystem = new World(Platforms);
             #endregion
 
-            Globals.Level = this;
+            Globals.WorldSystem = new World(Platforms, new Vector2(1950, 50));
+            Globals.Level = Levels.level01;
         }
         #endregion
 

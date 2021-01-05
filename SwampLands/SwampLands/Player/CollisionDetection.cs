@@ -22,22 +22,29 @@ namespace SwampLands
         #endregion
 
         #region Methods
-        #region Is there a collision
+        #region Is there a collision with platforms
         #region Left
-        public Boolean HasCollidedLeft()
+        public Boolean HasCollidedLeft(string collidedwith)
         {
-            foreach (Platform platform in Globals.WorldSystem.WorldObjects)
+            switch (collidedwith)
             {
-                if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
-                {
-                    if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top > platform.HitBox.Top  - Offset &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom < platform.HitBox.Bottom + Offset &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Left < platform.HitBox.Right &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Right > platform.HitBox.Right)
+                case "platform":
+                    foreach (Platform platform in Globals.WorldSystem.WorldObjects)
                     {
-                        return true;
+                        if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
+                        {
+                            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top > platform.HitBox.Top - Offset &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom < platform.HitBox.Bottom + Offset &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left < platform.HitBox.Right &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Right > platform.HitBox.Right)
+                            {
+                                return true;
+                            }
+                        }
                     }
-                }
+                    break;
+                default:
+                    break;
             }
 
             return false;
@@ -45,20 +52,27 @@ namespace SwampLands
         #endregion
 
         #region Right
-        public Boolean HasCollidedRight()
+        public Boolean HasCollidedRight(string collidedwith)
         {
-            foreach (Platform platform in Globals.WorldSystem.WorldObjects)
+            switch (collidedwith)
             {
-                if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
-                {
-                    if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top > platform.HitBox.Top - Offset &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom < platform.HitBox.Bottom + Offset &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Left < platform.HitBox.Left &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Right > platform.HitBox.Left)
+                case "platform":
+                    foreach (Platform platform in Globals.WorldSystem.WorldObjects)
                     {
-                        return true;
+                        if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
+                        {
+                            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top > platform.HitBox.Top - Offset &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom < platform.HitBox.Bottom + Offset &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left < platform.HitBox.Left &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Right > platform.HitBox.Left)
+                            {
+                               return true;
+                            }
+                        }
                     }
-                }
+                    break;
+                default:
+                    break;
             }
 
             return false;
@@ -66,20 +80,27 @@ namespace SwampLands
         #endregion
 
         #region Bottom
-        public Boolean HasCollidedBottom()
+        public Boolean HasCollidedBottom(string collidedwith)
         {
-            foreach (Platform platform in Globals.WorldSystem.WorldObjects)
+            switch (collidedwith)
             {
-                if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
-                {
-                    if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < platform.HitBox.Top &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > platform.HitBox.Top &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Left > platform.HitBox.Left - Offset &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Right < platform.HitBox.Right + Offset)
+                case "platform":
+                    foreach (Platform platform in Globals.WorldSystem.WorldObjects)
                     {
-                        return true;
+                        if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
+                        {
+                            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < platform.HitBox.Top &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > platform.HitBox.Top &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left > platform.HitBox.Left - Offset &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Right < platform.HitBox.Right + Offset)
+                            {
+                               return true;
+                            }
+                        }
                     }
-                }
+                    break;
+                default:
+                    break;
             }
 
             return false;
@@ -87,28 +108,33 @@ namespace SwampLands
         #endregion
 
         #region Top
-        public Boolean HasCollidedTop()
+        public Boolean HasCollidedTop(string collidedwith)
         {
-            foreach (Platform platform in Globals.WorldSystem.WorldObjects)
+            switch (collidedwith)
             {
-                if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
-                {
-                    if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < platform.HitBox.Bottom &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > platform.HitBox.Bottom &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Left > platform.HitBox.Left - Offset &&
-                        Globals.WorldSystem.PlayerCharacter.Hitbox.Right < platform.HitBox.Right + Offset)
+                case "platform":
+                    foreach (Platform platform in Globals.WorldSystem.WorldObjects)
                     {
-                        return true;
+                        if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
+                        {
+                            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < platform.HitBox.Bottom &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > platform.HitBox.Bottom &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left > platform.HitBox.Left - Offset &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Right < platform.HitBox.Right + Offset)
+                            {
+                               return true;
+                            }
+                        }
                     }
-                }
+                    break;
+                default:
+                    break;
             }
 
             return false;
         }
         #endregion
         #endregion
-
-
         #endregion
     }
 }

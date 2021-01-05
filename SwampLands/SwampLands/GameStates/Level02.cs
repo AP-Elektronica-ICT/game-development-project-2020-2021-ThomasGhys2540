@@ -48,8 +48,12 @@ namespace SwampLands
             Platforms.Add(new Platform(new Vector2(2950, 350), 8, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(3050, 200), 8, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(4600, 800), 2, Rotation.Horizontal));
-            Globals.WorldSystem = new World(Platforms);
+            Platforms.Add(new Platform(new Vector2(6000, 800), 3, Rotation.Horizontal));
+
             #endregion
+
+            Globals.WorldSystem = new World(Platforms, new Vector2(6050, 750));
+            Globals.Level = Levels.level02;
         }
         #endregion
 

@@ -18,6 +18,7 @@ namespace SwampLands
     class MainHero
     {
         #region Variables
+        public Rectangle Configuration;
         public Rectangle Hitbox;
 
         private Boolean HasJumped;
@@ -31,7 +32,6 @@ namespace SwampLands
         private int Speed;
         private int SpriteSheetSize;
         private int UpdateSpriteAnimation;
-        private Rectangle Configuration;
         private Rectangle SpriteSheet;
         private SpriteEffects HeroSpriteEffect;
         private Texture2D HeroSprite;
@@ -89,7 +89,7 @@ namespace SwampLands
             #endregion
 
             #region Gravity
-            if (CollisionManager.HasCollidedBottom())
+            if (CollisionManager.HasCollidedBottom("platform"))
             {
                 Velocity.Y = 0;
                 HasJumped = false;
@@ -129,7 +129,7 @@ namespace SwampLands
                 HeroSpriteEffect = SpriteEffects.None;
                 SpriteSheetSize = 384;
 
-                if (CollisionManager.HasCollidedRight())
+                if (CollisionManager.HasCollidedRight("platform"))
                 {
                     Velocity.X = 0;
                 }
@@ -147,7 +147,7 @@ namespace SwampLands
                 HeroSpriteEffect = SpriteEffects.FlipHorizontally;
                 SpriteSheetSize = 384;
 
-                if (CollisionManager.HasCollidedLeft())
+                if (CollisionManager.HasCollidedLeft("platform"))
                 {
                     Velocity.X = 0;
                 }
@@ -167,7 +167,7 @@ namespace SwampLands
                 Velocity.Y = JumpForce;
             }
 
-            if (CollisionManager.HasCollidedTop())
+            if (CollisionManager.HasCollidedTop("platform"))
             {
                 Velocity.Y -= JumpForce / 3;
             }

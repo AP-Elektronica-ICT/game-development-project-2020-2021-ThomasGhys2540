@@ -13,6 +13,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 #endregion
 
+public enum Levels { Clear, level01, level02, level03, level04}
+
 namespace SwampLands
 {
     class Globals
@@ -31,7 +33,9 @@ namespace SwampLands
         //GameState
         public static State CurrentGameState;
         public static State NextGameState;
-        public static State Level;
+
+        //Level
+        public static Levels Level;
 
         //Change GameState
         public  static void ChangeGameState(State changeTo)

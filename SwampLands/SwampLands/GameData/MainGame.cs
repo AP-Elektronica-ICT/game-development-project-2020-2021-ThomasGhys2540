@@ -73,7 +73,7 @@ namespace SwampLands
 
                 Background.Draw();
 
-                if (Globals.CurrentGameState.GetType() == typeof(MainMenuState) || Globals.CurrentGameState.GetType() == typeof(LevelSelectState) || Globals.CurrentGameState.GetType() == typeof(GameOverState))
+                if (Globals.CurrentGameState.GetType() == typeof(MainMenuState) || Globals.CurrentGameState.GetType() == typeof(LevelSelectState) || Globals.CurrentGameState.GetType() == typeof(GameOverState) || Globals.CurrentGameState.GetType() == typeof(VictoryScreenState))
                 {
                     Globals.CurrentGameState.Draw(gameTime);
                 }
@@ -99,7 +99,7 @@ namespace SwampLands
             #region Level Spritebatch Call
             Globals.SpriteDrawer.Begin(transformMatrix: ViewMatrix);
 
-                if (Globals.CurrentGameState.GetType() != typeof(MainMenuState) || Globals.CurrentGameState.GetType() != typeof(LevelSelectState) || Globals.CurrentGameState.GetType() != typeof(GameOverState))
+                if (Globals.CurrentGameState.GetType() != typeof(MainMenuState) || Globals.CurrentGameState.GetType() != typeof(LevelSelectState) || Globals.CurrentGameState.GetType() != typeof(GameOverState) || Globals.CurrentGameState.GetType() != typeof(VictoryScreenState))
                 {
                     Globals.CurrentGameState.Draw(gameTime);
                 }

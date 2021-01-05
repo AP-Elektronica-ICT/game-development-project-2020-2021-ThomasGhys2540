@@ -18,12 +18,13 @@ namespace SwampLands
     class World
     {
         #region Variables
+        public EndFlag Checkpoint;
         public List<Platform> WorldObjects;
         public MainHero PlayerCharacter;
         #endregion
 
         #region Constructors
-        public World(List<Platform> worldPlatforms)
+        public World(List<Platform> worldPlatforms, Vector2 checkpoint)
         {
             #region Instantiate World Variables
             WorldObjects = new List<Platform>();
@@ -39,6 +40,10 @@ namespace SwampLands
             {
                 WorldObjects.Add(platform);
             }
+            #endregion
+
+            #region SetCheckpoint
+            Checkpoint = new EndFlag((int)checkpoint.X, (int)checkpoint.Y);
             #endregion
         }
         #endregion
@@ -56,6 +61,10 @@ namespace SwampLands
             #region Draw Hero
             PlayerCharacter.Draw(gameTime);
             #endregion
+
+            #region Draw Checkpoint
+            Checkpoint.Draw(gameTime);
+            #endregion
         }
         #endregion
 
@@ -64,6 +73,10 @@ namespace SwampLands
         {
             #region Update Hero
             PlayerCharacter.Update(gameTime);
+            #endregion
+
+            #region Update Checkpoint
+            Checkpoint.Update(gameTime);
             #endregion
         }
         #endregion

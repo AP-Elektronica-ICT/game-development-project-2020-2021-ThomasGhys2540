@@ -60,7 +60,7 @@ namespace SwampLands
         }
         #endregion
 
-        #region
+        #region Update
         public override void Update(GameTime gameTime)
         {
             foreach (Component components in LevelSelectItems)
