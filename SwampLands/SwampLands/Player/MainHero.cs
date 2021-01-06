@@ -180,7 +180,7 @@ namespace SwampLands
 
             #region HeroDeath
             #region OutOfBounds
-            if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < -50)
+            if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < -150)
             {
                 Globals.ChangeGameState(new GameOverState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
             }

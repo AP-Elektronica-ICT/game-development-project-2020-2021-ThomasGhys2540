@@ -21,16 +21,18 @@ namespace SwampLands
         public EndFlag Checkpoint;
         public List<Platform> WorldObjects;
         public List<MovingPlatform> WorldMovingPlatforms;
+        public List<EnemyEntity> Enemies;
         public MainHero PlayerCharacter;
         #endregion
 
         #region Constructors
-        public World(List<Platform> worldPlatforms, Vector2 checkpoint, List<MovingPlatform> movingPlatforms)
+        public World(List<Platform> worldPlatforms, Vector2 checkpoint, List<MovingPlatform> movingPlatforms, List<EnemyEntity> enemies)
         {
             #region Instantiate World Variables
             WorldObjects = new List<Platform>();
             PlayerCharacter = new MainHero();
             WorldMovingPlatforms = new List<MovingPlatform>();
+            Enemies = new List<EnemyEntity>();
             #endregion
 
             #region Instantiate Global Variables
@@ -46,6 +48,11 @@ namespace SwampLands
             foreach (MovingPlatform platform in movingPlatforms)
             {
                 WorldMovingPlatforms.Add(platform);
+            }
+
+            foreach (EnemyEntity enemy in enemies)
+            {
+                Enemies.Add(enemy);
             }
             #endregion
 
@@ -74,6 +81,13 @@ namespace SwampLands
             PlayerCharacter.Draw(gameTime);
             #endregion
 
+            #region Draw Enemies
+            foreach (EnemyEntity enemy in Enemies)
+            {
+                enemy.Draw(gameTime);
+            }
+            #endregion
+
             #region Draw Checkpoint
             Checkpoint.Draw(gameTime);
             #endregion
@@ -85,6 +99,21 @@ namespace SwampLands
         {
             #region Update Hero
             PlayerCharacter.Update(gameTime);
+            #endregion
+
+            #region Update Enemies
+            for (int i = 0; i < Enemies.Count; i++)
+            {
+                if (CollisionDetection.EnemyTopCollision(Enemies[i].HitBox))
+                {
+                    Enemies.RemoveAt(i);
+                }
+            }
+
+            foreach (EnemyEntity enemy in Enemies)
+            {
+                enemy.Update(gameTime);
+            }
             #endregion
 
             #region Update World Objects

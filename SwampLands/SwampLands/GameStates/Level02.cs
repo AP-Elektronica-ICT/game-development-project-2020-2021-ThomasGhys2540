@@ -53,10 +53,10 @@ namespace SwampLands
             MovingPlatforms.Add(new MovingPlatform(new Vector2(2950, 500), new Vector2(2750, 500), new Vector2(3100, 500), Direction.Horizontal, 4));
             MovingPlatforms.Add(new MovingPlatform(new Vector2(3000, 350), new Vector2(2750, 350), new Vector2(3100, 350), Direction.Horizontal, 4));
             MovingPlatforms.Add(new MovingPlatform(new Vector2(3000, 200), new Vector2(2750, 200), new Vector2(3100, 200), Direction.Horizontal, 2));
-            MovingPlatforms.Add(new MovingPlatform(new Vector2(4600, 800), new Vector2(3500, 800), new Vector2(5800, 800), Direction.Horizontal, 4));
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(4600, 800), new Vector2(3500, 800), new Vector2(5800, 800), Direction.Horizontal, 4, 250));
             #endregion
 
-            Globals.WorldSystem = new World(Platforms, new Vector2(6050, 750), MovingPlatforms);
+            Globals.WorldSystem = new World(Platforms, new Vector2(6050, 750), MovingPlatforms, new List<EnemyEntity>());
             Globals.Level = Levels.level02;
         }
         #endregion

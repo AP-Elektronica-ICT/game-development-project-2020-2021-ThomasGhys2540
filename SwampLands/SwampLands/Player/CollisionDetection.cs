@@ -18,7 +18,7 @@ namespace SwampLands
     class CollisionDetection
     {
         #region Variables
-        private float Offset = 30;
+        private static float Offset = 30;
         #endregion
 
         #region Methods
@@ -149,6 +149,23 @@ namespace SwampLands
             return false;
         }
         #endregion
+        #endregion
+
+        #region Enemy Collision
+        public static Boolean EnemyTopCollision(Rectangle enemyhitbox)
+        {
+            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < enemyhitbox.Bottom &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > enemyhitbox.Bottom &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left > enemyhitbox.Left - Offset&&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Right < enemyhitbox.Right + Offset)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         #endregion
         #endregion
     }
