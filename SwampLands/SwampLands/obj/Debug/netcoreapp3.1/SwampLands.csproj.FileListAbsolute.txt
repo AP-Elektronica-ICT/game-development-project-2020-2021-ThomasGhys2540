@@ -96,3 +96,5 @@ C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLa
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\UI\Buttons\NextLevelButton.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Platform\MovingPlatform.xnb
 C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Enemies\Snail.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Enemies\Bird.xnb
+C:\Users\thomm\Desktop\game-development-project-2020-2021-ThomasGhys2540\SwampLands\SwampLands\bin\Debug\netcoreapp3.1\Content\Sprites\Enemies\Rino.xnb

@@ -33,48 +33,14 @@ namespace SwampLands
         #endregion
 
         #region Methods
-        public override void Draw(GameTime gameTime)
+        public void Draw(GameTime gameTime)
         {
             Globals.SpriteDrawer.Draw(Sprite, Position, Spritesheet, Spriteshade, SpriteRotation, DrawOrigin, EnemySpriteEffect, 0);
         }
 
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
-            #region Update Hitbox
-            HitBox = Position;
-            #endregion
-
-            #region Animate Sprite
-            Spritesheet.X += UpdateSpriteAnimation;
-
-            if (Spritesheet.X >= SpriteSheetSize)
-            {
-                Spritesheet.X = 0;
-            }
-            #endregion
-
-            #region Moving the enemy
-            if (!HasReachedBoundary)
-            {
-                Position.X += Walkingspeed;                
-
-                if (Position.X >= EndBoundary.X)
-                {
-                    HasReachedBoundary = true;
-                    EnemySpriteEffect = SpriteEffects.None;
-                }
-            }
-            else if (HasReachedBoundary)
-            {
-                Position.X -= Walkingspeed;                
-
-                if (Position.X <= StartBoundary.X)
-                {
-                    HasReachedBoundary = false;
-                    EnemySpriteEffect = SpriteEffects.FlipHorizontally;
-                }
-            }
-            #endregion
+            base.Update(gameTime);
         }
         #endregion
     }

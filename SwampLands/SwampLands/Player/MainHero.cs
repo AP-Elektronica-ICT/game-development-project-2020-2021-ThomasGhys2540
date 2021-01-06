@@ -93,6 +93,8 @@ namespace SwampLands
             {
                 Velocity.Y = 0;
                 HasJumped = false;
+
+                CollisionManager.CorrectCollision();
             }
             else
             {

@@ -151,6 +151,28 @@ namespace SwampLands
         #endregion
         #endregion
 
+        #region Platform Correction
+        public void CorrectCollision()
+        {
+            foreach (Platform platform in Globals.WorldSystem.WorldObjects)
+            {
+                if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(platform.HitBox))
+                {
+                    if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < platform.HitBox.Top &&
+                        Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > platform.HitBox.Top &&
+                        Globals.WorldSystem.PlayerCharacter.Hitbox.Left > platform.HitBox.Left - Offset &&
+                        Globals.WorldSystem.PlayerCharacter.Hitbox.Right < platform.HitBox.Right + Offset)
+                    {
+                        if ((Globals.WorldSystem.PlayerCharacter.Configuration.Bottom - platform.HitBox.Top) > 0)
+                        {
+                            Globals.WorldSystem.PlayerCharacter.Configuration.Y -= Globals.WorldSystem.PlayerCharacter.Configuration.Bottom - platform.HitBox.Top;
+                        }
+                    }
+                }
+            }
+        }
+        #endregion
+
         #region Enemy Collision
         public static Boolean EnemyTopCollision(Rectangle enemyhitbox)
         {

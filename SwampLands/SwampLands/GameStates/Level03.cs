@@ -31,9 +31,18 @@ namespace SwampLands
             #region Creating World Platforms
             Platforms.Add(new Platform(new Vector2(0, 800), 30, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(0, 500), 7, Rotation.Vertical));
-            Globals.WorldSystem = new World(Platforms, Vector2.Zero, new List<MovingPlatform>(), new List<EnemyEntity>());
+            Platforms.Add(new Platform(new Vector2(1950, 800), 20, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(1950, 750), 2, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(2350, 750), 1, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2400, 750), 1, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2350, 700), 2, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(2750, 700), 2, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2800, 700), 2, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2750, 650), 2, Rotation.Horizontal));
             #endregion
 
+
+            Globals.WorldSystem = new World(Platforms, Vector2.Zero, new List<MovingPlatform>(), new List<EnemyEntity>());
             Globals.Level = Levels.level03;
         }
         #endregion

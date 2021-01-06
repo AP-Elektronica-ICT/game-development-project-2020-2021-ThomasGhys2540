@@ -39,10 +39,11 @@ namespace SwampLands
             Platforms.Add(new Platform(new Vector2(900, 750), 6, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(900, 700), 3, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(1600, 650), 3, Rotation.Vertical));
-            Platforms.Add(new Platform(new Vector2(1900, 100), 10, Rotation.Vertical));
-            Platforms.Add(new Platform(new Vector2(1950, 100), 10, Rotation.Vertical));
-            Platforms.Add(new Platform(new Vector2(2000, 100), 10, Rotation.Vertical));
-            Platforms.Add(new Platform(new Vector2(2050, 100), 10, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(1900, 100), 4, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(1900, 150), 9, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(1950, 150), 9, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2000, 150), 9, Rotation.Vertical));
+            Platforms.Add(new Platform(new Vector2(2050, 150), 9, Rotation.Vertical));
             Platforms.Add(new Platform(new Vector2(2600, 800), 6, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2300, 650), 4, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2750, 450), 4, Rotation.Horizontal));
@@ -57,7 +58,9 @@ namespace SwampLands
             #endregion
 
             #region Generate Enemies
-            Enemies.Add(new Snail(new Rectangle(2600, 750, 76, 50), new Vector2(2600, 750), new Vector2(2900, 750), 1));
+            Enemies.Add(new Snail(new Rectangle(2600, 750, 76, 50), new Vector2(2600, 750), new Vector2(2800, 750), 1));
+            Enemies.Add(new Bird(new Rectangle(1000, 100, 50, 50), new Vector2(50, 100), new Vector2(1100, 100), 2));
+            Enemies.Add(new Bird(new Rectangle(1000, 200, 50, 50), new Vector2(150, 200), new Vector2(1400, 200), 3));
             #endregion
 
             Globals.WorldSystem = new World(Platforms, new Vector2(1950, 50), MovingPlatforms, Enemies);
