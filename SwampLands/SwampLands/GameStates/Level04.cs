@@ -19,6 +19,8 @@ namespace SwampLands
     {
         #region Variables
         private List<Platform> Platforms;
+        private List<MovingPlatform> MovingPlatforms;
+        private List<EnemyEntity> Enemies;
         #endregion
 
         #region Constructors
@@ -26,14 +28,24 @@ namespace SwampLands
         {
             #region Initialise Variables
             Platforms = new List<Platform>();
+            MovingPlatforms = new List<MovingPlatform>();
+            Enemies = new List<EnemyEntity>();
             #endregion
 
             #region Creating World Platforms
             Platforms.Add(new Platform(new Vector2(0, 800), 30, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(0, 500), 7, Rotation.Vertical));
-            Globals.WorldSystem = new World(Platforms, Vector2.Zero, new List<MovingPlatform>(), new List<EnemyEntity>());
             #endregion
 
+            #region Creating moving platforms
+
+            #endregion
+
+            #region Generating enemies
+
+            #endregion
+
+            Globals.WorldSystem = new World(Platforms, Vector2.Zero, new List<MovingPlatform>(), new List<EnemyEntity>());
             Globals.Level = Levels.level04;
         }
         #endregion
