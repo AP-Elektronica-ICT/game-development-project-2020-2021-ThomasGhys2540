@@ -108,6 +108,10 @@ namespace SwampLands
                 {
                     Enemies.RemoveAt(i);
                 }
+                else if (!CollisionDetection.EnemyTopCollision(Enemies[i].HitBox) && Enemies[i].HitBox.Intersects(PlayerCharacter.Hitbox))
+                {
+                    Globals.ChangeGameState(new GameOverState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
+                }
             }
 
             foreach (EnemyEntity enemy in Enemies)

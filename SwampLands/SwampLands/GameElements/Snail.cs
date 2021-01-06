@@ -75,13 +75,6 @@ namespace SwampLands
                 }
             }
             #endregion
-
-            #region Kill hero
-            if (!CollisionDetection.EnemyTopCollision(HitBox) && Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(HitBox))
-            {
-                //Globals.ChangeGameState(new GameOverState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
-            }
-            #endregion
         }
         #endregion
     }

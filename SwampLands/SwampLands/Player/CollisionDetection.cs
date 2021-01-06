@@ -154,9 +154,9 @@ namespace SwampLands
         #region Enemy Collision
         public static Boolean EnemyTopCollision(Rectangle enemyhitbox)
         {
-            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < enemyhitbox.Bottom &&
-                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > enemyhitbox.Bottom &&
-                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left > enemyhitbox.Left - Offset&&
+            if (Globals.WorldSystem.PlayerCharacter.Hitbox.Top < enemyhitbox.Top &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Bottom > enemyhitbox.Top &&
+                                Globals.WorldSystem.PlayerCharacter.Hitbox.Left > enemyhitbox.Left - Offset &&
                                 Globals.WorldSystem.PlayerCharacter.Hitbox.Right < enemyhitbox.Right + Offset)
             {
                 return true;
