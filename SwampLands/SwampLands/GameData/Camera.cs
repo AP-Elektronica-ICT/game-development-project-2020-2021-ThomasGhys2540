@@ -35,10 +35,10 @@ namespace SwampLands
         #region Constructors
         public Camera(Viewport viewport)
         {
-            ScreenViewport = viewport;
             Rotation = 0;
             Zoom = 1;
             Origin = new Vector2(viewport.Width / 2f, viewport.Height / 2f);
+            ScreenViewport = viewport;
         }
         #endregion
 

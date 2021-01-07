@@ -69,20 +69,24 @@ namespace SwampLands
         #region Update
         public void Update(GameTime gameTime)
         {
-            #region Update Hitbox
             Hitbox = Position;
-            #endregion
+            Animate();
+            Movement();
+        }
+        #endregion
 
-            #region Animate Platform
+        #region Methods
+        private void Animate()
+        {
             SpriteSheet.X += UpdateSpriteAnimation;
 
             if (SpriteSheet.X >= SpriteSheetSize)
             {
                 SpriteSheet.X = 0;
             }
-            #endregion
-
-            #region Update platform position
+        }
+        private void Movement()
+        {
             switch (DirectionMovement)
             {
                 case Direction.Horizontal:
@@ -180,7 +184,6 @@ namespace SwampLands
                 default:
                     break;
             }
-            #endregion
         }
         #endregion
     }

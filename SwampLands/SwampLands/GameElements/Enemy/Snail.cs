@@ -26,7 +26,7 @@ namespace SwampLands
         {
             Sprite = Globals.ContentLoader.Load<Texture2D>("Sprites\\Enemies\\Snail");
 
-            Spritesheet = new Rectangle(0, 0, 38, 24);
+            SpriteSheet = new Rectangle(0, 0, 38, 24);
             SpriteSheetSize = 380;
             UpdateSpriteAnimation = 38;
         }
@@ -35,7 +35,7 @@ namespace SwampLands
         #region Methods
         public void Draw(GameTime gameTime)
         {
-            Globals.SpriteDrawer.Draw(Sprite, Position, Spritesheet, Spriteshade, SpriteRotation, DrawOrigin, EnemySpriteEffect, 0);
+            Globals.SpriteDrawer.Draw(Sprite, Position, SpriteSheet, SpriteShade, SpriteRotation, DrawOrigin, SpriteEffect, 0);
         }
 
         public void Update(GameTime gameTime)

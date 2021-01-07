@@ -19,33 +19,38 @@ namespace SwampLands
 {
     class Globals
     {
-        #region GameData
-        //Loads in the images
-        public static ContentManager ContentLoader;
-
-        //Draws the images
-        public static SpriteBatch SpriteDrawer;
-
-        //Screen Resolution
-        public static int ScreenHeight;
-        public static int ScreenWidth;
-
+        #region GameState
         //GameState
         public static State CurrentGameState;
         public static State NextGameState;
 
-        //Level
-        public static Levels Level;
-
         //Change GameState
-        public  static void ChangeGameState(State changeTo)
+        public static void ChangeGameState(State changeTo)
         {
             NextGameState = changeTo;
         }
         #endregion
 
+        #region Level
+        //Level
+        public static Levels Level;
+        #endregion
+
+        #region Resolution
+        //Screen Resolution
+        public static int ScreenHeight;
+        public static int ScreenWidth;
+        #endregion
+
+        #region Sprite
+        //Loads in the images
+        public static ContentManager ContentLoader;
+
+        //Draws the images
+        public static SpriteBatch SpriteDrawer;
+        #endregion
+
         #region World
-        public static Boolean IsPaused;
         public static World WorldSystem;
         #endregion
     }

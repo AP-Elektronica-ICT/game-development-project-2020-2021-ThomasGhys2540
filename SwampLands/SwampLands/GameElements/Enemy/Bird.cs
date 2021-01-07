@@ -26,7 +26,7 @@ namespace SwampLands
         {
             Sprite = Globals.ContentLoader.Load<Texture2D>("Sprites\\Enemies\\Bird");
 
-            Spritesheet = new Rectangle(0, 0, 32, 32);
+            SpriteSheet = new Rectangle(0, 0, 32, 32);
             SpriteSheetSize = 288;
             UpdateSpriteAnimation = 32;
         }

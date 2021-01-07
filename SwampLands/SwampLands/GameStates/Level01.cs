@@ -58,9 +58,9 @@ namespace SwampLands
             #endregion
 
             #region Generate Enemies
-            Enemies.Add(new Snail(new Rectangle(2600, 750, 76, 50), new Vector2(2600, 750), new Vector2(2800, 750), 1));
-            Enemies.Add(new Bird(new Rectangle(1000, 100, 50, 50), new Vector2(50, 100), new Vector2(1100, 100), 2));
-            Enemies.Add(new Bird(new Rectangle(1000, 200, 50, 50), new Vector2(150, 200), new Vector2(1400, 200), 3));
+            Enemies.Add(new Snail(new Rectangle(2800, 750, 76, 50), new Vector2(2600, 750), new Vector2(2800, 750), 1));
+            Enemies.Add(new Bird(new Rectangle(1100, 100, 50, 50), new Vector2(50, 100), new Vector2(1100, 100), 2));
+            Enemies.Add(new Bird(new Rectangle(1400, 200, 50, 50), new Vector2(150, 200), new Vector2(1400, 200), 3));
             #endregion
 
             Globals.WorldSystem = new World(Platforms, new Vector2(1950, 50), MovingPlatforms, Enemies);

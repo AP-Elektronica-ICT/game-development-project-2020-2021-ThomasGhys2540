@@ -81,23 +81,8 @@ namespace SwampLands
             Globals.SpriteDrawer.End();
             #endregion
 
-            #region Calculate Camera ViewMatrix
-            var ViewMatrix = Camera2D.GetViewMatrix(Vector2.Zero);
-
-            if (Globals.WorldSystem != null)
-            {
-                Vector2 PlayerPosition = new Vector2(Globals.WorldSystem.PlayerCharacter.Hitbox.X + (Globals.WorldSystem.PlayerCharacter.Hitbox.Width / 2) - 400, 0);
-
-                ViewMatrix = Camera2D.GetViewMatrix(PlayerPosition);
-            }
-            else
-            {
-                ViewMatrix = Camera2D.GetViewMatrix(Vector2.Zero);
-            }
-            #endregion
-
             #region Level Spritebatch Call
-            Globals.SpriteDrawer.Begin(transformMatrix: ViewMatrix);
+            Globals.SpriteDrawer.Begin(transformMatrix: CalculateCameraViewMatrix());
 
                 if (Globals.CurrentGameState.GetType() != typeof(MainMenuState) || Globals.CurrentGameState.GetType() != typeof(LevelSelectState) || Globals.CurrentGameState.GetType() != typeof(GameOverState) || Globals.CurrentGameState.GetType() != typeof(VictoryScreenState))
                 {
@@ -114,7 +99,32 @@ namespace SwampLands
         #region Update
         protected override void Update(GameTime gameTime)
         {
-            #region GameState Update
+            UpdateGameState(gameTime);
+
+            base.Update(gameTime);
+        }
+        #endregion
+
+        #region Methods
+        public Matrix CalculateCameraViewMatrix()
+        {
+            var ViewMatrix = Camera2D.GetViewMatrix(Vector2.Zero);
+
+            if (Globals.WorldSystem != null)
+            {
+                Vector2 PlayerPosition = new Vector2(Globals.WorldSystem.PlayerCharacter.Hitbox.X + (Globals.WorldSystem.PlayerCharacter.Hitbox.Width / 2) - 400, 0);
+
+                ViewMatrix = Camera2D.GetViewMatrix(PlayerPosition);
+            }
+            else
+            {
+                ViewMatrix = Camera2D.GetViewMatrix(Vector2.Zero);
+            }
+
+            return ViewMatrix;
+        }
+        public void UpdateGameState(GameTime gameTime)
+        {
             if (Globals.NextGameState != null)
             {
                 Globals.CurrentGameState = Globals.NextGameState;
@@ -123,9 +133,6 @@ namespace SwampLands
             }
 
             Globals.CurrentGameState.Update(gameTime);
-            #endregion
-
-            base.Update(gameTime);
         }
         #endregion
     }

@@ -18,63 +18,68 @@ namespace SwampLands
     public abstract class EnemyEntity
     {
         #region Variables
-        public Boolean HasReachedBoundary;
-        public Color Spriteshade;
-        public int SpriteSheetSize;
-        public int UpdateSpriteAnimation;
-        public int Walkingspeed;
-        public float SpriteRotation;
+        protected Boolean HasReachedBoundary;
+        protected Color SpriteShade;
+        protected float SpriteRotation;
+        protected int SpriteSheetSize;
+        protected int UpdateSpriteAnimation;
+        protected int Walkingspeed;
+        protected Rectangle Position;
+        protected Rectangle SpriteSheet;
+        protected SpriteEffects SpriteEffect;
+        protected Texture2D Sprite;
+        protected Vector2 DrawOrigin;
+        protected Vector2 EndBoundary;
+        protected Vector2 StartBoundary;
+
         public Rectangle HitBox;
-        public Rectangle Position;
-        public Rectangle Spritesheet;
-        public SpriteEffects EnemySpriteEffect;
-        public Texture2D Sprite;
-        public Vector2 DrawOrigin;
-        public Vector2 EndBoundary;
-        public Vector2 StartBoundary;        
         #endregion
 
         #region Constructors
         public EnemyEntity(Rectangle position, Vector2 start, Vector2 end, int speed)
         {
+            HasReachedBoundary = false;
+            SpriteShade = Color.White;
+            SpriteRotation = 0;
+            Walkingspeed = speed;
+            HitBox = position;
             Position = position;
-            HitBox = Position;
+            SpriteEffect = SpriteEffects.None;
+            DrawOrigin = Vector2.Zero;
             StartBoundary = start;
             EndBoundary = end;
-            Walkingspeed = speed;
-
-            Spriteshade = Color.White;
-            SpriteRotation = 0;
-            DrawOrigin = Vector2.Zero;
-            EnemySpriteEffect = SpriteEffects.None;
+            
         }
         #endregion
 
-        #region Methods
         #region Draw
         public void Draw(GameTime gameTime)
         {
-            Globals.SpriteDrawer.Draw(Sprite, Position, Spritesheet, Spriteshade, SpriteRotation, DrawOrigin, EnemySpriteEffect, 0);
+            Globals.SpriteDrawer.Draw(Sprite, Position, SpriteSheet, SpriteShade, SpriteRotation, DrawOrigin, SpriteEffect, 0);
         }
         #endregion
 
         #region Update
         public void Update(GameTime gameTime)
         {
-            #region Update Hitbox
             HitBox = Position;
-            #endregion
+            Animate();
+            Movement();
+        }
+        #endregion
 
-            #region Animate Sprite
-            Spritesheet.X += UpdateSpriteAnimation;
+        #region Methods
+        private void Animate()
+        {
+            SpriteSheet.X += UpdateSpriteAnimation;
 
-            if (Spritesheet.X >= SpriteSheetSize)
+            if (SpriteSheet.X >= SpriteSheetSize)
             {
-                Spritesheet.X = 0;
+                SpriteSheet.X = 0;
             }
-            #endregion
-
-            #region Moving the enemy
+        }
+        private void Movement()
+        {
             if (!HasReachedBoundary)
             {
                 Position.X += Walkingspeed;
@@ -82,7 +87,7 @@ namespace SwampLands
                 if (Position.X >= EndBoundary.X)
                 {
                     HasReachedBoundary = true;
-                    EnemySpriteEffect = SpriteEffects.None;
+                    SpriteEffect = SpriteEffects.None;
                 }
             }
             else if (HasReachedBoundary)
@@ -92,12 +97,10 @@ namespace SwampLands
                 if (Position.X <= StartBoundary.X)
                 {
                     HasReachedBoundary = false;
-                    EnemySpriteEffect = SpriteEffects.FlipHorizontally;
+                    SpriteEffect = SpriteEffects.FlipHorizontally;
                 }
             }
-            #endregion
         }
-        #endregion
         #endregion
     }
 }

@@ -89,6 +89,43 @@ namespace SwampLands
             #endregion
 
             #region Gravity
+            GravityApplication(gameTime);
+            #endregion
+
+            #region Sprinting
+            Sprinting();
+            #endregion
+
+            #region IdleSprite
+            IdleAnimation();
+            #endregion
+
+            #region Running Sprite          
+            RunningAnimation();
+            #endregion
+
+            #region Jumping
+            Jumping();
+            #endregion
+
+            #region Movement Update
+            Configuration.X += (int)(Velocity.X);
+            Configuration.Y += (int)(Velocity.Y * _Time * GravityModifier);
+            #endregion
+
+            #region HeroDeath
+            CheckDeath();
+            #endregion
+
+            #region Animate Sprite
+            Animate();
+            #endregion
+        }
+        #endregion
+
+        #region Methods
+        private void GravityApplication(GameTime gameTime)
+        {
             if (CollisionManager.HasCollidedBottom("platform") || CollisionManager.HasCollidedBottom("movingplatform"))
             {
                 Velocity.Y = 0;
@@ -100,9 +137,9 @@ namespace SwampLands
             {
                 Velocity.Y += Gravity * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
-            #endregion
-
-            #region Sprinting
+        }
+        private void Sprinting()
+        {
             if (Keyboard.GetState().IsKeyDown(Keys.LeftControl))
             {
                 Speed = BaseSpeed * 2;
@@ -111,9 +148,9 @@ namespace SwampLands
             {
                 Speed = BaseSpeed;
             }
-            #endregion
-
-            #region IdleSprite
+        }
+        private void IdleAnimation()
+        {
             if (Keyboard.GetState().IsKeyUp(Keys.Q) && Keyboard.GetState().IsKeyUp(Keys.D))
             {
                 SpriteSheetSize = 352;
@@ -121,9 +158,9 @@ namespace SwampLands
 
                 Velocity.X = 0;
             }
-            #endregion
-
-            #region Running Sprite          
+        }
+        private void RunningAnimation()
+        {
             #region Running Right
             if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyUp(Keys.Q))
             {
@@ -159,9 +196,9 @@ namespace SwampLands
                 }
             }
             #endregion
-            #endregion
-
-            #region Jumping
+        }
+        private void Jumping()
+        {
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && !HasJumped || Keyboard.GetState().IsKeyDown(Keys.Z) && !HasJumped)
             {
                 HasJumped = true;
@@ -173,30 +210,24 @@ namespace SwampLands
             {
                 Velocity.Y -= JumpForce / 3;
             }
-            #endregion
-
-            #region Movement Update
-            Configuration.X += (int)(Velocity.X);
-            Configuration.Y += (int)(Velocity.Y * _Time * GravityModifier);
-            #endregion
-
-            #region HeroDeath
+        }
+        private void CheckDeath()
+        {
             #region OutOfBounds
             if (Hitbox.Bottom > Globals.ScreenHeight || Hitbox.Top < -150)
             {
                 Globals.ChangeGameState(new GameOverState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
             }
             #endregion
-            #endregion
-
-            #region Animate Sprite
+        }
+        private void Animate()
+        {
             SpriteSheet.X += UpdateSpriteAnimation;
-            
+
             if (SpriteSheet.X >= SpriteSheetSize)
             {
                 SpriteSheet.X = 0;
             }
-            #endregion
         }
         #endregion
     }

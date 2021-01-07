@@ -56,18 +56,27 @@ namespace SwampLands
             Platforms.Add(new Platform(new Vector2(2000, 700), 9, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2000, 750), 10, Rotation.Horizontal));
             Platforms.Add(new Platform(new Vector2(2000, 800), 15, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(3000, 550), 5, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(3350, 700), 3, Rotation.Horizontal));
+            Platforms.Add(new Platform(new Vector2(4500, 650), 3, Rotation.Horizontal));
             #endregion
 
             #region Creating moving platforms
-
+            MovingPlatforms.Add(new MovingPlatform(new Vector2(3850, 800), new Vector2(3850, 800), new Vector2(4250, 800), Direction.Horizontal, 4));
             #endregion
 
             #region Generating enemies
-
+            Enemies.Add(new Bird(new Rectangle(800, 50, 50, 50), new Vector2(100, 50), new Vector2(800, 50), 2));
+            Enemies.Add(new Bird(new Rectangle(1200, 150, 50, 50), new Vector2(300, 150), new Vector2(1200, 150), 2));
+            Enemies.Add(new Rino(new Rectangle(2700, 730, 100, 70), new Vector2(2500, 730), new Vector2(2700, 730), 4));
+            Enemies.Add(new Rino(new Rectangle(3200, 480, 100, 70), new Vector2(3000, 480), new Vector2(3200, 480), 3));
+            Enemies.Add(new Rino(new Rectangle(3150, 480, 100, 70), new Vector2(3000, 730), new Vector2(3200, 730), 3));
+            Enemies.Add(new Bird(new Rectangle(4500, 200, 50, 50), new Vector2(3500, 200), new Vector2(4500, 200), 2));
+            Enemies.Add(new Bird(new Rectangle(4000, 300, 50, 50), new Vector2(3000, 300), new Vector2(4000, 300), 3));
             #endregion
 
 
-            Globals.WorldSystem = new World(Platforms, Vector2.Zero, MovingPlatforms, Enemies);
+            Globals.WorldSystem = new World(Platforms, new Vector2(4550, 600), MovingPlatforms, Enemies);
             Globals.Level = Levels.level03;
         }
         #endregion

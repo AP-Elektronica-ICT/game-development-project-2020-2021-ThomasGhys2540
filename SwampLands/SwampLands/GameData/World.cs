@@ -35,10 +35,6 @@ namespace SwampLands
             Enemies = new List<EnemyEntity>();
             #endregion
 
-            #region Instantiate Global Variables
-            Globals.IsPaused = false;
-            #endregion
-
             #region Create Platforms
             foreach(Platform platform in worldPlatforms)
             {
@@ -65,7 +61,33 @@ namespace SwampLands
         #region Draw
         public virtual void Draw(GameTime gameTime)
         {
-            #region Draw World Platforms
+            DrawEnemies(gameTime);
+            DrawWorldObjects(gameTime);
+            PlayerCharacter.Draw(gameTime);
+            Checkpoint.Draw(gameTime);
+        }
+        #endregion
+
+        #region Update
+        public virtual void Update(GameTime gameTime)
+        {
+            UpdateEnemies(gameTime);
+            UpdateWorldObjects(gameTime);
+            PlayerCharacter.Update(gameTime);
+            Checkpoint.Update(gameTime);
+        }
+        #endregion
+
+        #region Methods
+        private void DrawEnemies(GameTime gameTime)
+        {
+            foreach (EnemyEntity enemy in Enemies)
+            {
+                enemy.Draw(gameTime);
+            }
+        }
+        private void DrawWorldObjects(GameTime gameTime)
+        {
             foreach (Platform platform in WorldObjects)
             {
                 platform.Draw(gameTime);
@@ -75,33 +97,9 @@ namespace SwampLands
             {
                 platform.Draw(gameTime);
             }
-            #endregion
-
-            #region Draw Hero
-            PlayerCharacter.Draw(gameTime);
-            #endregion
-
-            #region Draw Enemies
-            foreach (EnemyEntity enemy in Enemies)
-            {
-                enemy.Draw(gameTime);
-            }
-            #endregion
-
-            #region Draw Checkpoint
-            Checkpoint.Draw(gameTime);
-            #endregion
         }
-        #endregion
-
-        #region Update
-        public virtual void Update(GameTime gameTime)
+        private void UpdateEnemies(GameTime gameTime)
         {
-            #region Update Hero
-            PlayerCharacter.Update(gameTime);
-            #endregion
-
-            #region Update Enemies
             for (int i = 0; i < Enemies.Count; i++)
             {
                 if (CollisionDetection.EnemyTopCollision(Enemies[i].HitBox))
@@ -118,9 +116,9 @@ namespace SwampLands
             {
                 enemy.Update(gameTime);
             }
-            #endregion
-
-            #region Update World Objects
+        }
+        private void UpdateWorldObjects(GameTime gameTime)
+        {
             foreach (Platform platform in WorldObjects)
             {
                 platform.Update(gameTime);
@@ -130,11 +128,6 @@ namespace SwampLands
             {
                 platform.Update(gameTime);
             }
-            #endregion
-
-            #region Update Checkpoint
-            Checkpoint.Update(gameTime);
-            #endregion
         }
         #endregion
     }

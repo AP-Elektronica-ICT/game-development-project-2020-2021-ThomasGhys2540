@@ -26,7 +26,7 @@ namespace SwampLands
         {
             Sprite = Globals.ContentLoader.Load<Texture2D>("Sprites\\Enemies\\Rino");
 
-            Spritesheet = new Rectangle(0, 0, 52, 34);
+            SpriteSheet = new Rectangle(0, 0, 52, 34);
             SpriteSheetSize = 312;
             UpdateSpriteAnimation = 52;
         }

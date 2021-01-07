@@ -54,21 +54,27 @@ namespace SwampLands
         #region Update
         public override void Update(GameTime gameTime)
         {
-            #region Animate Flag
+            Animate();
+            CheckVictoryCondition();
+        }
+        #endregion
+
+        #region Methods
+        private void Animate()
+        {
             SpriteSheet.X += UpdateSpriteAnimation;
 
             if (SpriteSheet.X >= SpriteSheetSize)
             {
                 SpriteSheet.X = 0;
             }
-            #endregion
-
-            #region Check Victory Condition
+        }
+        private void CheckVictoryCondition()
+        {
             if (Globals.WorldSystem.PlayerCharacter.Hitbox.Intersects(Position))
             {
                 Globals.ChangeGameState(new VictoryScreenState(Globals.CurrentGameState.Main, Globals.CurrentGameState.Graphics));
             }
-            #endregion
         }
         #endregion
     }

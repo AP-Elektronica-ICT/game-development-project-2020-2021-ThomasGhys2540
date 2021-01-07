@@ -7323,11 +7323,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thomm\\Desktop\\game-development-project-2020-2021-ThomasGhys2540\\SwampLands\\SwampLands\\SwampLands.csproj",
+      "projectUniqueName": "C:\\Users\\thomm\\Desktop\\SwampLands\\SwampLands\\SwampLands.csproj",
       "projectName": "SwampLands",
-      "projectPath": "C:\\Users\\thomm\\Desktop\\game-development-project-2020-2021-ThomasGhys2540\\SwampLands\\SwampLands\\SwampLands.csproj",
+      "projectPath": "C:\\Users\\thomm\\Desktop\\SwampLands\\SwampLands\\SwampLands.csproj",
       "packagesPath": "C:\\Users\\thomm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thomm\\Desktop\\game-development-project-2020-2021-ThomasGhys2540\\SwampLands\\SwampLands\\obj\\",
+      "outputPath": "C:\\Users\\thomm\\Desktop\\SwampLands\\SwampLands\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
