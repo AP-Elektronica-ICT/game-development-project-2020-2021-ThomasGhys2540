@@ -1,0 +1,135 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PublishReadyToRun>false</PublishReadyToRun>
+    <TieredCompilation>false</TieredCompilation>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Content\Fonts\Arial20.xnb" />
+    <None Remove="Content\Fonts\Arial48.xnb" />
+    <None Remove="Content\Fonts\Arial48Bold.xnb" />
+    <None Remove="Content\Sprites\Backgrounds\Forest.xnb" />
+    <None Remove="Content\Sprites\Checkpoint\Checkpoint.xnb" />
+    <None Remove="Content\Sprites\Enemies\Bird.xnb" />
+    <None Remove="Content\Sprites\Enemies\Rino.xnb" />
+    <None Remove="Content\Sprites\Enemies\Snail.xnb" />
+    <None Remove="Content\Sprites\Hero\IdleHero.xnb" />
+    <None Remove="Content\Sprites\Hero\RunHero.xnb" />
+    <None Remove="Content\Sprites\Platform\BottomTile.xnb" />
+    <None Remove="Content\Sprites\Platform\LeftCornerTile.xnb" />
+    <None Remove="Content\Sprites\Platform\MovingPlatform.xnb" />
+    <None Remove="Content\Sprites\Platform\RightCornerTile.xnb" />
+    <None Remove="Content\Sprites\Platform\StraightTile.xnb" />
+    <None Remove="Content\Sprites\UI\Buttons\NextLevelButton.xnb" />
+    <None Remove="Content\Sprites\UI\GameOver.xnb" />
+    <None Remove="Content\Sprites\UI\LevelButton.xnb" />
+    <None Remove="Content\Sprites\UI\LevelSelect.xnb" />
+    <None Remove="Content\Sprites\UI\menu.xnb" />
+    <None Remove="Content\Sprites\UI\PlayButton.xnb" />
+    <None Remove="Content\Sprites\UI\QuitButton.xnb" />
+    <None Remove="Content\Sprites\UI\RestartButton.xnb" />
+    <None Remove="Content\Sprites\UI\SettingsButton.xnb" />
+    <None Remove="Content\Sprites\UI\Titles\Victory.xnb" />
+    <None Remove="Content\Sprites\UI\UICanvas.xnb" />
+    <None Remove="Content\Sprites\UI\UITable.xnb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\Arial20.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Arial48.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Arial48Bold.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Backgrounds\Forest.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Checkpoint\Checkpoint.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Enemies\Bird.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Enemies\Rino.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Enemies\Snail.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Hero\IdleHero.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Hero\RunHero.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\BottomTile.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\LeftCornerTile.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\MovingPlatform.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\RightCornerTile.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\Platform\StraightTile.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\NextLevelButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Titles\GameOver.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\LevelButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Titles\LevelSelect.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\MenuButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\PlayButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\QuitButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\RestartButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Buttons\SettingsButton.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\Titles\Victory.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\UICanvas.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sprites\UI\UITable.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.0.1641" />
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+</Project>
